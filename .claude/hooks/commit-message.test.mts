@@ -47,6 +47,25 @@ describe('commit-message hook (PreToolUse on Bash)', () => {
     expect(checkCommitCommand({ tool_name: 'Write', tool_input: {} })).toEqual({ allow: true });
   });
 
+  it.each([
+    'git commit --no-verify -m "feat: x"',
+    'git commit -n -m "feat: x"',
+    'git commit -anm "feat: x"',
+    'LEFTHOOK=0 git commit -m "feat: x"',
+    'git -c core.hooksPath=/dev/null commit -m "feat: x"',
+  ])('denies a commit that skips the pre-commit checks: %s', (command) => {
+    const decision = checkCommitCommand(bash(command));
+    expect(decision.allow).toBe(false);
+    expect(!decision.allow && decision.reason).toMatch(/pnpm verify/);
+  });
+
+  it('does not mistake a flag written inside the message for a real one', () => {
+    expect(checkCommitCommand(bash('git commit -m "fix: handle -n and --no-verify"'))).toEqual({
+      allow: true,
+    });
+    expect(checkCommitCommand(bash('git commit -am "feat: x"'))).toEqual({ allow: true });
+  });
+
   it('script: denies a badly named commit from the JSON sent by Claude Code', () => {
     const { status, stdout } = runHook('commit-message.mts', bash('git commit -m "wip"'));
     expect(status).toBe(0);

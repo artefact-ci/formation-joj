@@ -1,6 +1,7 @@
 /**
  * Hook PreToolUse sur Bash : un `git commit` dont le message ne suit pas Conventional Commits est
- * refusé, avec l'explication. Logique pure ; la lecture de l'entrée est dans commit-message.mts.
+ * refusé, avec l'explication ; un commit qui saute la vérification de pré-commit (--no-verify,
+ * -n, LEFTHOOK=0) aussi. Logique pure ; la lecture de l'entrée est dans commit-message.mts.
  */
 import type { Decision, PreToolUseInput } from './hook-io.mts';
 
@@ -25,6 +26,9 @@ export function checkCommitCommand(input: PreToolUseInput): Decision {
   const command = input.tool_input?.command;
   if (input.tool_name !== 'Bash' || !command || !isGitCommit(command)) return { allow: true };
 
+  const bypass = skippedChecks(command);
+  if (bypass) return { allow: false, reason: explainBypass(bypass) };
+
   const message = commitMessage(command);
   // Message écrit dans l'éditeur, lu dans un fichier (-F) ou repris (--amend --no-edit) :
   // rien à vérifier ici.
@@ -37,6 +41,32 @@ export function checkCommitCommand(input: PreToolUseInput): Decision {
 
 function isGitCommit(command: string): boolean {
   return /(^|[\s;&|(])git(\s+-[cC]\s+\S+)*\s+commit\b/.test(command);
+}
+
+/**
+ * Une façon de sauter la vérification de pré-commit (lefthook → pnpm verify), ou undefined. Les
+ * textes entre guillemets (le message) sont ignorés : « fix: handle -n » n'est pas un flag.
+ */
+export function skippedChecks(command: string): string | undefined {
+  const code = command
+    .replace(/<<-?\s*(['"]?)(\w+)\1[^\n]*\n[\s\S]*?\n\s*\2\b/g, '')
+    .replace(/"(?:[^"\\]|\\.)*"|'[^']*'/g, '""');
+  if (/\bLEFTHOOK(?:_EXCLUDE)?=/.test(code)) return 'la variable LEFTHOOK';
+  if (/core\.hooksPath/.test(code)) return 'core.hooksPath';
+  // Les options du seul `git commit`, jusqu'à la commande suivante.
+  const options = /\bcommit\b([^;&|]*)/.exec(code)?.[1] ?? '';
+  if (/(?:^|\s)--no-verify\b/.test(options)) return '--no-verify';
+  if (/(?:^|\s)-[a-zA-Z]*n[a-zA-Z]*\b/.test(options)) return '-n';
+  return undefined;
+}
+
+function explainBypass(how: string): string {
+  return [
+    `Commit refusé : ${how} saute la vérification de pré-commit (pnpm verify).`,
+    'Cette vérification est la même que celle des skills : si elle échoue, corrige la cause.',
+    "Lance `pnpm verify` pour voir l'erreur, corrige, puis relance le commit sans contournement.",
+    "Si tu ne sais pas corriger, explique le blocage à l'utilisateur.",
+  ].join('\n');
 }
 
 /** Premier message passé en ligne : heredoc, -m "…", -m '…', --message=…, -m mot. */
