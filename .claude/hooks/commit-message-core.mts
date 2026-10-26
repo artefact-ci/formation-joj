@@ -39,8 +39,16 @@ export function checkCommitCommand(input: PreToolUseInput): Decision {
   return problem ? { allow: false, reason: explain(subject, problem) } : { allow: true };
 }
 
+/** Un vrai `git commit`, pas le texte d'une chaîne (`node -e "… git commit …"`, `echo '…'`). */
 function isGitCommit(command: string): boolean {
-  return /(^|[\s;&|(])git(\s+-[cC]\s+\S+)*\s+commit\b/.test(command);
+  return /(^|[\s;&|(])git(\s+-[cC]\s+\S+)*\s+commit\b/.test(withoutQuotedText(command));
+}
+
+/** La commande sans les heredocs ni le contenu des chaînes entre guillemets. */
+function withoutQuotedText(command: string): string {
+  return command
+    .replace(/<<-?\s*(['"]?)(\w+)\1[^\n]*\n[\s\S]*?\n\s*\2\b/g, '')
+    .replace(/"(?:[^"\\]|\\.)*"|'[^']*'/g, '""');
 }
 
 /**
@@ -48,9 +56,7 @@ function isGitCommit(command: string): boolean {
  * textes entre guillemets (le message) sont ignorés : « fix: handle -n » n'est pas un flag.
  */
 export function skippedChecks(command: string): string | undefined {
-  const code = command
-    .replace(/<<-?\s*(['"]?)(\w+)\1[^\n]*\n[\s\S]*?\n\s*\2\b/g, '')
-    .replace(/"(?:[^"\\]|\\.)*"|'[^']*'/g, '""');
+  const code = withoutQuotedText(command);
   if (/\bLEFTHOOK(?:_EXCLUDE)?=/.test(code)) return 'la variable LEFTHOOK';
   if (/core\.hooksPath/.test(code)) return 'core.hooksPath';
   // Les options du seul `git commit`, jusqu'à la commande suivante.

@@ -59,6 +59,15 @@ describe('commit-message hook (PreToolUse on Bash)', () => {
     expect(!decision.allow && decision.reason).toMatch(/pnpm verify/);
   });
 
+  it('ignores a git commit written inside a quoted string', () => {
+    expect(
+      checkCommitCommand(
+        bash(`node -e "edit('SKILL.md', 'puis git commit -m \\"docs(<module>): x\\"')"`),
+      ),
+    ).toEqual({ allow: true });
+    expect(checkCommitCommand(bash(`echo 'git commit --no-verify'`))).toEqual({ allow: true });
+  });
+
   it('does not mistake a flag written inside the message for a real one', () => {
     expect(checkCommitCommand(bash('git commit -m "fix: handle -n and --no-verify"'))).toEqual({
       allow: true,
