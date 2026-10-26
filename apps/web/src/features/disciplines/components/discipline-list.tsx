@@ -1,8 +1,10 @@
 import type { DisciplineResponse } from '@joj/shared';
+import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useDeleteDiscipline } from '../api/disciplines.api';
 import { CATEGORY_LABELS } from './category-labels';
+import { DeleteDisciplineButton } from './delete-discipline-button';
 import { DisciplineEditForm } from './discipline-edit-form';
 import { errorMessage } from './error-message';
 
@@ -28,7 +30,13 @@ export function DisciplineList({ disciplines }: { disciplines: DisciplineRespons
                 <DisciplineEditForm discipline={discipline} onDone={() => setEditingId(null)} />
               ) : (
                 <div className="flex items-center justify-between gap-4">
-                  <span className="font-medium">{discipline.name}</span>
+                  <Link
+                    to="/disciplines/$disciplineId"
+                    params={{ disciplineId: discipline.id }}
+                    className="font-medium underline-offset-4 hover:underline"
+                  >
+                    {discipline.name}
+                  </Link>
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-muted-foreground">
                       {CATEGORY_LABELS[discipline.category]}
@@ -41,16 +49,11 @@ export function DisciplineList({ disciplines }: { disciplines: DisciplineRespons
                     >
                       Modifier
                     </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-destructive"
-                      aria-label={`Supprimer ${discipline.name}`}
+                    <DeleteDisciplineButton
+                      discipline={discipline}
                       disabled={deleteDiscipline.isPending}
-                      onClick={() => deleteDiscipline.mutate(discipline.id)}
-                    >
-                      Supprimer
-                    </Button>
+                      onConfirm={() => deleteDiscipline.mutate(discipline.id)}
+                    />
                   </div>
                 </div>
               )}
