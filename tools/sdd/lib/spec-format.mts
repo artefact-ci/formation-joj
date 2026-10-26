@@ -12,8 +12,10 @@ export interface Problem {
 export interface Task {
   id: string;
   done: boolean;
-  /** `001-AS2` */
+  /** Le premier scénario cité : `001-AS2`. */
   scenario: string;
+  /** Tous les scénarios cités : `[001-AS2, AS3]` → `001-AS2`, `001-AS3`. */
+  scenarios: string[];
   text: string;
   line: number;
   /** `Tâches`, ou `Corrections` pour celles ajoutées par /converge. */
@@ -43,7 +45,7 @@ const MAX_TASKS = 6;
 
 const STATUS = /^\*\*Statut\*\*\s*:\s*(.*?)\s*$/;
 const SCENARIO = /^### AS([1-9]\d*) — \S/;
-const TASK = /^- \[( |x)\] (T\d{2}) \[(\d{3})-(AS[1-9]\d*)\] (\S.*)$/;
+const TASK = /^- \[( |x)\] (T\d{2}) \[(\d{3})-(AS[1-9]\d*(?:, AS[1-9]\d*)*)\] (\S.*)$/;
 
 interface Line {
   text: string;
@@ -83,12 +85,14 @@ export function tasks(text: string): Task[] {
   return lines(text).flatMap(({ text: raw, line, section }) => {
     const match = TASK.exec(raw);
     if (!match) return [];
-    const [, box, id, number, scenario, taskText] = match;
+    const [, box, id, number, cited, taskText] = match;
+    const scenarios = (cited ?? '').split(', ').map((scenario) => `${number}-${scenario}`);
     return [
       {
         id: id ?? '',
         done: box === 'x',
-        scenario: `${number}-${scenario}`,
+        scenario: scenarios[0] ?? '',
+        scenarios,
         text: taskText ?? '',
         line,
         section,
@@ -222,15 +226,17 @@ export function checkPlan(
       problems.push({ file, line: task.line, message: `tâche ${task.id} en double` });
     }
     ids.add(task.id);
-    const [taskNumber, scenario] = task.scenario.split('-');
-    if (taskNumber !== number) {
-      problems.push({
-        file,
-        line: task.line,
-        message: `${task.scenario} n'appartient pas à la spec ${number}`,
-      });
-    } else if (!specScenarios.includes(scenario ?? '')) {
-      problems.push({ file, line: task.line, message: `${task.scenario} absent de la spec` });
+    for (const cited of task.scenarios) {
+      const [taskNumber, scenario] = cited.split('-');
+      if (taskNumber !== number) {
+        problems.push({
+          file,
+          line: task.line,
+          message: `${cited} n'appartient pas à la spec ${number}`,
+        });
+      } else if (!specScenarios.includes(scenario ?? '')) {
+        problems.push({ file, line: task.line, message: `${cited} absent de la spec` });
+      }
     }
   }
   const plannedTasks = list.filter((t) => t.section === 'Tâches').length;

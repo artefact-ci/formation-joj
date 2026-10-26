@@ -25,7 +25,7 @@ Copie `.claude/skills/spec-plan/plan-template.md` dans le dossier de la spec et 
 3. **Données** : tables, colonnes, contraintes (unicité, clés étrangères), et la règle que chaque contrainte protège.
 4. **Erreurs** : une ligne par refus métier. Code stable en majuscules, catégorie AppError (VALIDATION 400, NOT_FOUND 404, CONFLICT 409, BUSINESS_RULE 422), situation, scénario.
 5. **Tests par scénario** : chaque `ASn` de la spec a une ligne, avec fichier, niveau (unitaire, intégration, e2e, écran) et ce que le test vérifie. Choisis le niveau le plus bas qui prouve le « Alors ».
-6. **Tâches** : six au plus, dans l'ordre des couches, format `- [ ] T01 [NNN-AS1] Écrire d'abord <fichier de test> (« NNN-AS1: … »), puis <code>`. Une tâche tient dans un commit et cite le scénario qu'elle fait avancer. Le front fait une tâche à part entière s'il est dans la spec.
+6. **Tâches** : six au plus, dans l'ordre des couches, format `- [ ] T01 [NNN-AS1] Écrire d'abord <fichier de test> (« NNN-AS1: … »), puis <code>`. Une tâche tient dans un commit et cite les scénarios qu'elle fait avancer : `[NNN-AS2]`, ou `[NNN-AS2, AS3, AS4]` si son test en couvre plusieurs (une route qui porte plusieurs règles). Le front fait une tâche à part entière s'il est dans la spec.
 
 Le plan ne rajoute aucun besoin : ce qui n'est pas dans la spec n'y est pas.
 

@@ -13,12 +13,12 @@ Tâche demandée : $ARGUMENTS (vide = toutes les tâches non cochées, dans l'or
 - Lis `specs/constitution.md`, et le `CLAUDE.md` du dépôt s'il existe.
 - Prends la spec au plus grand numéro `specs/NNN-*` (ou celle que l'utilisateur a nommée). Lis `spec.md` et `plan.md`.
 - **Si le plan n'est pas au statut `Validé`, arrête-toi** et dis-le : il faut d'abord `/spec-plan`.
-- Les tâches sont les lignes `- [ ] Tnn [NNN-ASk] …` de `plan.md` (sections « Tâches » puis « Corrections »).
+- Les tâches sont les lignes `- [ ] Tnn [NNN-ASk] …` (ou `[NNN-ASk, ASm]`) de `plan.md` (sections « Tâches » puis « Corrections »).
 
 ## Pour chaque tâche
 
 1. **Annonce** : `Tnn [NNN-ASk] — <fichier de test>`.
-2. **Test d'abord** : écris seulement le test nommé par la tâche. Son titre commence par l'identifiant : `it('NNN-ASk: …')`. Il vérifie le « Alors » du scénario (valeur, statut HTTP, code d'erreur), pas seulement qu'« il se passe quelque chose ».
+2. **Test d'abord** : écris seulement le test nommé par la tâche. Son titre commence par l'identifiant : `it('NNN-ASk: …')` ; une tâche qui cite plusieurs scénarios a un test par scénario. Il vérifie le « Alors » du scénario (valeur, statut HTTP, code d'erreur), pas seulement qu'« il se passe quelque chose ».
 3. **Rouge** : `pnpm tdd:red <fichier de test>`.
    - « ne se charge pas » ou « pas pour la bonne raison » : écris le squelette demandé (modules et exports typés, corps `throw new Error('non implémenté')`), puis relance.
    - « passe déjà » : le test ne prouve rien ; renforce-le.

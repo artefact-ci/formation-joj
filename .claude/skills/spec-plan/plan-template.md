@@ -46,7 +46,7 @@ Chaque scénario de la spec est prouvé par au moins un test, au niveau le plus 
 
 ## 6. Tâches
 
-Six au plus, dans l'ordre des couches. Chaque tâche nomme le test à écrire d'abord ; elle tient dans un commit.
+Six au plus, dans l'ordre des couches. Chaque tâche nomme le test à écrire d'abord et cite les scénarios qu'elle couvre (`[NNN-AS2, AS3]` s'il y en a plusieurs) ; elle tient dans un commit.
 
 - [ ] T01 [NNN-AS1] Écrire d'abord `<fichier de test>` (« NNN-AS1: … »), puis <le code>
 - [ ] T02 [NNN-AS2] Écrire d'abord `<fichier de test>` (« NNN-AS2: … »), puis <le code>

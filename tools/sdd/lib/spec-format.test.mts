@@ -71,6 +71,7 @@ describe('tasks', () => {
         id: 'T01',
         done: true,
         scenario: '001-AS1',
+        scenarios: ['001-AS1'],
         text: "Écrire d'abord domain/inscription.spec.ts, puis l'entité",
         line: 32,
         section: 'Tâches',
@@ -79,11 +80,20 @@ describe('tasks', () => {
         id: 'T02',
         done: false,
         scenario: '001-AS2',
+        scenarios: ['001-AS2'],
         text: "Écrire d'abord test/benevoles.e2e.spec.ts, puis la route",
         line: 33,
         section: 'Tâches',
       },
     ]);
+  });
+});
+
+describe('tasks with several scenarios', () => {
+  it('reads a task that cites several scenarios of the spec', () => {
+    const plan = PLAN.replace('T02 [001-AS2]', 'T02 [001-AS2, AS3]');
+    assert.deepEqual(tasks(plan)[1]?.scenarios, ['001-AS2', '001-AS3']);
+    assert.equal(tasks(plan)[1]?.scenario, '001-AS2');
   });
 });
 
@@ -120,7 +130,7 @@ describe('checkPlan', () => {
   });
 
   it('reports a duplicated task, an unknown scenario and a scenario of another spec', () => {
-    const plan = PLAN.replace('T02 [001-AS2]', 'T01 [001-AS9]');
+    const plan = PLAN.replace('T02 [001-AS2]', 'T01 [001-AS2, AS9]');
     const text = messages(checkPlan('plan.md', plan, '001', ids)).join('\n');
     assert.match(text, /T01 en double/);
     assert.match(text, /001-AS9 absent de la spec/);
