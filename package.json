@@ -11,10 +11,15 @@
     "lint": "oxlint",
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",
-    "typecheck": "pnpm -r typecheck && tsc -p .claude/hooks",
+    "typecheck": "pnpm -r typecheck && tsc -p .claude/hooks && tsc -p tools/sdd",
     "db:generate": "pnpm --filter @joj/api db:generate",
     "db:seed": "pnpm --filter @joj/api db:seed",
-    "db:reset": "pnpm --filter @joj/api db:reset"
+    "db:reset": "pnpm --filter @joj/api db:reset",
+    "test:tools": "node --test \"tools/sdd/**/*.test.mts\"",
+    "spec:check": "node tools/sdd/spec-check.mts",
+    "tdd:red": "node tools/sdd/tdd-red.mts",
+    "verify": "node tools/sdd/verify.mts",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:tools && pnpm build"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",
