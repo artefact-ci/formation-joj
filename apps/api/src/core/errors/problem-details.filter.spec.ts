@@ -12,7 +12,7 @@ class SampleError extends AppError<'SAMPLE_TAKEN'> {
 }
 
 describe('toProblem', () => {
-  it('convertit une AppError selon sa catégorie, avec son code et ses détails', () => {
+  it('maps an AppError by its kind, with its code and details', () => {
     expect(toProblem(new SampleError())).toEqual({
       type: 'urn:problem-type:sample-taken',
       title: 'Conflict',
@@ -23,7 +23,7 @@ describe('toProblem', () => {
     });
   });
 
-  it('liste les champs invalides d’une erreur de validation zod', () => {
+  it('lists the invalid fields of a zod validation error', () => {
     class Dto extends createZodDto(z.object({ name: z.string() })) {}
     const result = Dto.schema.safeParse({});
     const problem = toProblem(new ZodValidationException(result.error));
@@ -31,11 +31,11 @@ describe('toProblem', () => {
     expect(problem.errors).toEqual([{ path: 'name', message: expect.any(String) }]);
   });
 
-  it('garde le statut des exceptions HTTP de Nest', () => {
+  it('keeps the status of Nest HTTP exceptions', () => {
     expect(toProblem(new NotFoundException())).toMatchObject({ status: 404, code: 'NOT_FOUND' });
   });
 
-  it('masque le détail d’une erreur inattendue', () => {
+  it('hides the detail of an unexpected error', () => {
     expect(toProblem(new Error('secret interne'))).toEqual(
       expect.objectContaining({
         status: 500,

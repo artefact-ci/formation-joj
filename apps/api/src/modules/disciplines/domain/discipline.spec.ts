@@ -6,7 +6,7 @@ const NOW = new Date('2026-10-31T09:00:00.000Z');
 const ID = '0199f5c2-0000-7000-8000-000000000001';
 
 describe('Discipline', () => {
-  it('AS1: crée une discipline avec un nom nettoyé et une catégorie de la liste', () => {
+  it('AS1: creates a discipline with a trimmed name and a listed category', () => {
     const discipline = Discipline.create({
       id: ID,
       name: '  Lutte  ',
@@ -21,19 +21,19 @@ describe('Discipline', () => {
     });
   });
 
-  it.each(['', '   '])('AS2: refuse une discipline sans nom (%j)', (name) => {
+  it.each(['', '   '])('AS2: rejects a discipline without a name (%j)', (name) => {
     expect(() => Discipline.create({ id: ID, name, category: 'athletisme', now: NOW })).toThrow(
       expect.objectContaining({ code: 'DISCIPLINE_NAME_REQUIRED', kind: 'VALIDATION' }),
     );
   });
 
-  it('AS2: refuse un nom trop long', () => {
+  it('AS2: rejects a name that is too long', () => {
     expect(() =>
       Discipline.create({ id: ID, name: 'x'.repeat(101), category: 'athletisme', now: NOW }),
     ).toThrow(expect.objectContaining({ code: 'DISCIPLINE_NAME_TOO_LONG' }));
   });
 
-  it('AS3: refuse une catégorie hors liste', () => {
+  it('AS3: rejects a category outside the list', () => {
     expect(() => Discipline.create({ id: ID, name: 'Échecs', category: 'jeux', now: NOW })).toThrow(
       DisciplineError,
     );

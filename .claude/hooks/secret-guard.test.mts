@@ -23,7 +23,7 @@ const edit = (new_string: string) => ({
   tool_input: { file_path: 'apps/api/.env.example', old_string: 'x', new_string },
 });
 
-describe('hook secret-guard (PreToolUse sur Edit|Write)', () => {
+describe('secret-guard hook (PreToolUse on Edit|Write)', () => {
   it.each([
     ['clé AWS', `const key = '${FAKE.aws}';`],
     ['clé d’API Anthropic', `ANTHROPIC_KEY=${FAKE.anthropic}`],
@@ -32,7 +32,7 @@ describe('hook secret-guard (PreToolUse sur Edit|Write)', () => {
     ['secret en clair', `const config = { password: '${FAKE.password}' };`],
     ['secret en clair', `API_TOKEN=${FAKE.password}`],
     ['mot de passe dans une URL', `DATABASE_URL=postgres://admin:${FAKE.password}@db:5432/app`],
-  ])('refuse un(e) %s', (label, content) => {
+  ])('denies a %s', (label, content) => {
     expect(findSecret(content)).toMatchObject({ label });
   });
 
@@ -44,11 +44,11 @@ describe('hook secret-guard (PreToolUse sur Edit|Write)', () => {
     'DATABASE_URL=postgres://joj:joj@localhost:5432/joj',
     'const tokenizer = createTokenizer();',
     "secret: '${SECRET}'",
-  ])('laisse passer du code ou une valeur factice : %s', (content) => {
+  ])('allows code or a placeholder value: %s', (content) => {
     expect(findSecret(content)).toBeUndefined();
   });
 
-  it('donne la ligne, sans recopier le secret', () => {
+  it('reports the line without echoing the secret', () => {
     const decision = checkSecretWrite(write(`// config\nconst key = '${FAKE.aws}';`));
     expect(decision.allow).toBe(false);
     if (decision.allow) return;
@@ -57,18 +57,18 @@ describe('hook secret-guard (PreToolUse sur Edit|Write)', () => {
     expect(decision.reason).toMatch(/apps\/api\/\.env/);
   });
 
-  it('vérifie aussi le nouveau texte d’un Edit', () => {
+  it('also checks the new text of an Edit', () => {
     expect(checkSecretWrite(edit(`SECRET_KEY=${FAKE.password}`)).allow).toBe(false);
     expect(checkSecretWrite(edit('SECRET_KEY=changeme')).allow).toBe(true);
   });
 
-  it('script : refuse l’écriture à partir du JSON reçu de Claude Code', () => {
+  it('script: denies the write from the JSON sent by Claude Code', () => {
     const { status, stdout } = runHook('secret-guard.mts', write(`const k = '${FAKE.aws}';`));
     expect(status).toBe(0);
     expect(decisionOf(stdout)).toMatchObject({ permissionDecision: 'deny' });
   });
 
-  it('script : ne dit rien pour un fichier sans secret', () => {
+  it('script: stays silent for a file without secrets', () => {
     const { stdout } = runHook('secret-guard.mts', write('export const PORT = 3000;'));
     expect(decisionOf(stdout)).toBeUndefined();
   });

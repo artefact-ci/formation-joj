@@ -11,8 +11,8 @@ function setup() {
   };
 }
 
-describe('disciplines (couche application)', () => {
-  it('AS1: crée une discipline et la retrouve dans la liste', async () => {
+describe('disciplines (application layer)', () => {
+  it('AS1: creates a discipline and finds it in the list', async () => {
     const { createDiscipline, listDisciplines } = setup();
     const created = await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
 
@@ -20,7 +20,7 @@ describe('disciplines (couche application)', () => {
     expect(await listDisciplines.execute()).toEqual([created]);
   });
 
-  it('AS2: refuse une discipline sans nom', async () => {
+  it('AS2: rejects a discipline without a name', async () => {
     const { createDiscipline, listDisciplines } = setup();
     await expect(
       createDiscipline.execute({ name: ' ', category: 'athletisme' }),
@@ -28,7 +28,7 @@ describe('disciplines (couche application)', () => {
     expect(await listDisciplines.execute()).toEqual([]);
   });
 
-  it('AS4: refuse un nom déjà pris', async () => {
+  it('AS4: rejects a name already taken', async () => {
     const { createDiscipline } = setup();
     await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
     await expect(
@@ -36,7 +36,7 @@ describe('disciplines (couche application)', () => {
     ).rejects.toMatchObject({ code: 'DISCIPLINE_NAME_TAKEN', kind: 'CONFLICT' });
   });
 
-  it('AS5: liste les disciplines triées par nom', async () => {
+  it('AS5: lists disciplines sorted by name', async () => {
     const { createDiscipline, listDisciplines } = setup();
     for (const name of ['Natation', 'Basketball 3x3', 'Lutte']) {
       await createDiscipline.execute({ name, category: 'athletisme' });

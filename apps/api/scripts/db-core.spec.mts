@@ -2,14 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { seedStatements, tableNameFromFile } from './db-core.mts';
 
 describe('tableNameFromFile', () => {
-  it('prend le nom du fichier, sans préfixe d’ordre', () => {
+  it('uses the file name without its ordering prefix', () => {
     expect(tableNameFromFile('disciplines.json')).toBe('disciplines');
     expect(tableNameFromFile('02-athletes.json')).toBe('athletes');
   });
 });
 
 describe('seedStatements', () => {
-  it('produit un INSERT paramétré, idempotent, par ligne', () => {
+  it('builds one parameterized, idempotent INSERT per row', () => {
     expect(
       seedStatements('disciplines', [{ name: 'Lutte', category: 'sports-de-combat' }]),
     ).toEqual([
@@ -21,7 +21,7 @@ describe('seedStatements', () => {
     ]);
   });
 
-  it('refuse un fichier qui n’est pas un tableau d’objets', () => {
+  it('rejects a file that is not an array of objects', () => {
     expect(() => seedStatements('t', { name: 'x' })).toThrow(/tableau/);
     expect(() => seedStatements('t', ['x'])).toThrow(/ligne 0/);
   });

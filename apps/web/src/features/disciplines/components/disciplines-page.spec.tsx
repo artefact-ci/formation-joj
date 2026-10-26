@@ -50,7 +50,7 @@ async function fillForm(name: string, category: string) {
 }
 
 describe('DisciplinesPage', () => {
-  it('AS5: affiche les disciplines renvoyées par l’API, avec leur catégorie', async () => {
+  it('AS5: shows the disciplines returned by the API, with their category', async () => {
     fakeApi([lutte]);
     renderWithQuery(<DisciplinesPage />);
 
@@ -61,13 +61,13 @@ describe('DisciplinesPage', () => {
     expect(items[0]).toHaveTextContent('Sports de combat');
   });
 
-  it('AS5: indique quand il n’y a encore aucune discipline', async () => {
+  it('AS5: says when there is no discipline yet', async () => {
     fakeApi([]);
     renderWithQuery(<DisciplinesPage />);
     expect(await screen.findByText('Aucune discipline pour l’instant.')).toBeInTheDocument();
   });
 
-  it('AS1: crée une discipline et l’affiche dans la liste', async () => {
+  it('AS1: creates a discipline and shows it in the list', async () => {
     const { posted } = fakeApi([lutte]);
     renderWithQuery(<DisciplinesPage />);
     await screen.findByText('Lutte');
@@ -79,7 +79,7 @@ describe('DisciplinesPage', () => {
     expect(screen.getByLabelText('Nom')).toHaveValue('');
   });
 
-  it('AS2: refuse une discipline sans nom, sans appeler l’API', async () => {
+  it('AS2: rejects a discipline without a name, without calling the API', async () => {
     const { posted } = fakeApi([]);
     renderWithQuery(<DisciplinesPage />);
     await screen.findByText('Aucune discipline pour l’instant.');
@@ -90,7 +90,7 @@ describe('DisciplinesPage', () => {
     expect(posted).toEqual([]);
   });
 
-  it('AS4: affiche l’erreur de l’API quand le nom est déjà pris', async () => {
+  it('AS4: shows the API error when the name is already taken', async () => {
     fakeApi([lutte], { status: 409, code: 'DISCIPLINE_NAME_TAKEN' });
     renderWithQuery(<DisciplinesPage />);
     await screen.findByText('Lutte');

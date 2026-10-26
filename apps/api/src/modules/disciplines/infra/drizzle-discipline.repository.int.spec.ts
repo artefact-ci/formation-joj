@@ -7,7 +7,7 @@ import { DrizzleDisciplineRepository } from './drizzle-discipline.repository';
 const newDiscipline = (name: string, now = new Date()) =>
   Discipline.create({ id: randomUUID(), name, category: 'athletisme', now });
 
-describe('DrizzleDisciplineRepository (PGlite en mémoire, migrations appliquées)', () => {
+describe('DrizzleDisciplineRepository (in-memory PGlite, migrations applied)', () => {
   let connection: DatabaseConnection;
   let repository: DrizzleDisciplineRepository;
 
@@ -19,7 +19,7 @@ describe('DrizzleDisciplineRepository (PGlite en mémoire, migrations appliquée
 
   afterAll(() => connection?.close());
 
-  it('AS1: relit fidèlement ce qu’il a écrit', async () => {
+  it('AS1: reads back exactly what it wrote', async () => {
     const discipline = newDiscipline('Aviron', new Date('2026-10-31T09:00:00.123Z'));
     await repository.insert(discipline);
 
@@ -27,14 +27,14 @@ describe('DrizzleDisciplineRepository (PGlite en mémoire, migrations appliquée
     expect(await repository.findByName('Inconnue')).toBeNull();
   });
 
-  it('AS4: traduit la contrainte d’unicité du nom en erreur métier', async () => {
+  it('AS4: turns the name unique constraint into a domain error', async () => {
     await repository.insert(newDiscipline('Escrime'));
     await expect(repository.insert(newDiscipline('Escrime'))).rejects.toMatchObject({
       code: 'DISCIPLINE_NAME_TAKEN',
     });
   });
 
-  it('AS5: liste triée par nom', async () => {
+  it('AS5: lists sorted by name', async () => {
     await repository.insert(newDiscipline('Zumba'));
     await repository.insert(newDiscipline('Badminton'));
     const names = (await repository.list()).map((discipline) => discipline.name);

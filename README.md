@@ -98,7 +98,7 @@ Le code ne dépend pas du mode : un seul provider Nest fournit l'instance Drizzl
 
 ## Ajouter une fonctionnalité
 
-Dans cet ordre, en écrivant chaque test avant le code et en le voyant échouer. Chaque test commence par l'identifiant de son scénario : `it('AS1: refuse une discipline sans nom', …)`. Modèle : `disciplines`.
+Dans cet ordre, en écrivant chaque test avant le code et en le voyant échouer. Les titres des tests (`describe`, `it`) s'écrivent en anglais et commencent par l'identifiant du scénario : `it('AS2: rejects a discipline without a name', …)`. Modèle : `disciplines`.
 
 1. **Schéma partagé** : `packages/shared/src/<nom>.ts` (schémas Zod d'entrée et de réponse), exporté par `index.ts`.
 2. **Entité et son test** : `domain/<entité>.ts`, `domain/<nom>.errors.ts`, `domain/<entité>.spec.ts`.

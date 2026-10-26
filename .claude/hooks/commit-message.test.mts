@@ -8,8 +8,8 @@ const bash = (command: string) => ({
   tool_input: { command, description: 'Commit' },
 });
 
-describe('hook commit-message (PreToolUse sur Bash)', () => {
-  it('laisse passer un message Conventional Commits', () => {
+describe('commit-message hook (PreToolUse on Bash)', () => {
+  it('allows a Conventional Commits message', () => {
     expect(checkCommitCommand(bash('git commit -m "feat(api): add disciplines"'))).toEqual({
       allow: true,
     });
@@ -18,20 +18,20 @@ describe('hook commit-message (PreToolUse sur Bash)', () => {
     });
   });
 
-  it('refuse un message libre, en expliquant le format attendu', () => {
+  it('denies a free-form message and explains the expected format', () => {
     const decision = checkCommitCommand(bash('git commit -m "ajout des disciplines"'));
     expect(decision.allow).toBe(false);
     expect(!decision.allow && decision.reason).toMatch(/Conventional Commits/);
     expect(!decision.allow && decision.reason).toMatch(/feat\(api\): add disciplines endpoint/);
   });
 
-  it('refuse un type inconnu ou une description manquante', () => {
+  it('denies an unknown type, a missing description or an overlong subject', () => {
     expect(checkCommitCommand(bash('git commit -m "feature: x"')).allow).toBe(false);
     expect(checkCommitCommand(bash('git commit -m "feat:"')).allow).toBe(false);
     expect(checkCommitCommand(bash(`git commit -m "feat: ${'x'.repeat(100)}"`)).allow).toBe(false);
   });
 
-  it('lit la première ligne d’un message en heredoc, comme les écrit Claude Code', () => {
+  it('reads the first line of a heredoc message, as Claude Code writes them', () => {
     const command = `git commit -m "$(cat <<'EOF'\nfeat(web): add form\n\nCorps du message.\nEOF\n)"`;
     expect(commitMessage(command)).toBe('feat(web): add form\n\nCorps du message.');
     expect(checkCommitCommand(bash(command))).toEqual({ allow: true });
@@ -40,20 +40,20 @@ describe('hook commit-message (PreToolUse sur Bash)', () => {
     );
   });
 
-  it('ignore les autres commandes, et les commits sans message en ligne', () => {
+  it('ignores other commands and commits without an inline message', () => {
     expect(checkCommitCommand(bash('git status'))).toEqual({ allow: true });
     expect(checkCommitCommand(bash('git commit'))).toEqual({ allow: true });
     expect(checkCommitCommand(bash('git commit --amend --no-edit'))).toEqual({ allow: true });
     expect(checkCommitCommand({ tool_name: 'Write', tool_input: {} })).toEqual({ allow: true });
   });
 
-  it('script : refuse un commit mal nommé à partir du JSON reçu de Claude Code', () => {
+  it('script: denies a badly named commit from the JSON sent by Claude Code', () => {
     const { status, stdout } = runHook('commit-message.mts', bash('git commit -m "wip"'));
     expect(status).toBe(0);
     expect(decisionOf(stdout)).toMatchObject({ permissionDecision: 'deny' });
   });
 
-  it('script : ne dit rien pour un commit correct', () => {
+  it('script: stays silent for a valid commit', () => {
     const { status, stdout } = runHook(
       'commit-message.mts',
       bash('git commit -m "test: cover AS4"'),
