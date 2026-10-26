@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+
+# pnpm n'exécute pas les scripts d'installation des dépendances, sauf ceux autorisés ici.
+allowBuilds:
+  '@swc/core': true
+  esbuild: true
+  lefthook: true
+  msw: true
