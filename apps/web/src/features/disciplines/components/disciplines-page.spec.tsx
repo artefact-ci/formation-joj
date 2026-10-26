@@ -1,75 +1,8 @@
-import type { CreateDisciplineInput, DisciplineResponse, UpdateDisciplineInput } from '@joj/shared';
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { http, HttpResponse } from 'msw';
 import { describe, expect, it } from 'vitest';
-import { server } from '@/test/msw-server';
-import { renderWithQuery } from '@/test/render';
-import { DisciplinesPage } from './disciplines-page';
-
-const lutte: DisciplineResponse = {
-  id: '0199f5c2-0000-7000-8000-000000000003',
-  name: 'Lutte',
-  category: 'sports-de-combat',
-  createdAt: '2026-10-01T08:00:00.000Z',
-};
-
-interface Problem {
-  status: number;
-  code: string;
-}
-
-const problem = ({ status, code }: Problem) =>
-  HttpResponse.json(
-    { type: 'urn:problem-type:x', title: 'Error', detail: 'Rejected', status, code },
-    { status },
-  );
-
-/**
- * Une fausse API en mémoire : GET liste, POST ajoute, PATCH modifie, DELETE supprime, ou répond
- * l'erreur donnée pour cette méthode.
- */
-function fakeApi(
-  initial: DisciplineResponse[],
-  errors: { post?: Problem; patch?: Problem; delete?: Problem } = {},
-) {
-  const disciplines = [...initial];
-  const posted: CreateDisciplineInput[] = [];
-  const patched: { id: string; body: UpdateDisciplineInput }[] = [];
-  const deleted: string[] = [];
-  server.use(
-    http.get('*/api/disciplines', () => HttpResponse.json(disciplines)),
-    http.post('*/api/disciplines', async ({ request }) => {
-      const body = (await request.json()) as CreateDisciplineInput;
-      posted.push(body);
-      if (errors.post) return problem(errors.post);
-      const created = { ...body, id: crypto.randomUUID(), createdAt: new Date().toISOString() };
-      disciplines.push(created);
-      return HttpResponse.json(created, { status: 201 });
-    }),
-    http.patch('*/api/disciplines/:id', async ({ request, params }) => {
-      const id = String(params['id']);
-      const body = (await request.json()) as UpdateDisciplineInput;
-      patched.push({ id, body });
-      if (errors.patch) return problem(errors.patch);
-      const index = disciplines.findIndex((discipline) => discipline.id === id);
-      const updated = { ...disciplines[index]!, ...body };
-      disciplines[index] = updated;
-      return HttpResponse.json(updated);
-    }),
-    http.delete('*/api/disciplines/:id', ({ params }) => {
-      const id = String(params['id']);
-      deleted.push(id);
-      if (errors.delete) return problem(errors.delete);
-      disciplines.splice(
-        disciplines.findIndex((discipline) => discipline.id === id),
-        1,
-      );
-      return new HttpResponse(null, { status: 204 });
-    }),
-  );
-  return { posted, patched, deleted };
-}
+import { renderApp } from '@/test/render';
+import { fakeApi, lutte, natation } from '../testing/fake-disciplines-api';
 
 async function fillForm(name: string, category: string) {
   const user = userEvent.setup();
@@ -81,7 +14,7 @@ async function fillForm(name: string, category: string) {
 describe('DisciplinesPage', () => {
   it('AS5: shows the disciplines returned by the API, with their category', async () => {
     fakeApi([lutte]);
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
 
     const list = await screen.findByRole('list', { name: 'Disciplines' });
     const items = within(list).getAllByRole('listitem');
@@ -92,13 +25,13 @@ describe('DisciplinesPage', () => {
 
   it('AS5: says when there is no discipline yet', async () => {
     fakeApi([]);
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
     expect(await screen.findByText('Aucune discipline pour l’instant.')).toBeInTheDocument();
   });
 
   it('AS1: creates a discipline and shows it in the list', async () => {
     const { posted } = fakeApi([lutte]);
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
     await screen.findByText('Lutte');
 
     await fillForm('Natation', 'sports-nautiques');
@@ -110,7 +43,7 @@ describe('DisciplinesPage', () => {
 
   it('AS2: rejects a discipline without a name, without calling the API', async () => {
     const { posted } = fakeApi([]);
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
     await screen.findByText('Aucune discipline pour l’instant.');
 
     await fillForm('', 'athletisme');
@@ -121,7 +54,7 @@ describe('DisciplinesPage', () => {
 
   it('AS4: shows the API error when the name is already taken', async () => {
     fakeApi([lutte], { post: { status: 409, code: 'DISCIPLINE_NAME_TAKEN' } });
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
     await screen.findByText('Lutte');
 
     await fillForm('Lutte', 'sports-de-combat');
@@ -129,16 +62,9 @@ describe('DisciplinesPage', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Une discipline porte déjà ce nom.');
   });
 
-  const natation: DisciplineResponse = {
-    id: '0199f5c2-0000-7000-8000-000000000004',
-    name: 'Natation',
-    category: 'sports-nautiques',
-    createdAt: '2026-10-01T08:00:00.000Z',
-  };
-
   async function startEditing(name: string) {
     const user = userEvent.setup();
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
     await user.click(await screen.findByRole('button', { name: `Modifier ${name}` }));
     return user;
   }
@@ -196,12 +122,25 @@ describe('DisciplinesPage', () => {
     expect(screen.getByLabelText('Nouveau nom')).toHaveValue('Natation');
   });
 
-  it('AS10: deletes a discipline and removes it from the list', async () => {
+  it('AS6: opens the detail page of a discipline from the list', async () => {
+    fakeApi([lutte, natation]);
+    const user = userEvent.setup();
+    await renderApp('/disciplines');
+
+    await user.click(await screen.findByRole('link', { name: 'Lutte' }));
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Lutte' })).toBeInTheDocument();
+  });
+
+  it('AS10: deletes a discipline after confirmation and removes it from the list', async () => {
     const { deleted } = fakeApi([lutte, natation]);
     const user = userEvent.setup();
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
 
     await user.click(await screen.findByRole('button', { name: 'Supprimer Lutte' }));
+    const dialog = await screen.findByRole('alertdialog', { name: 'Supprimer « Lutte » ?' });
+    expect(deleted).toEqual([]);
+    await user.click(within(dialog).getByRole('button', { name: 'Supprimer' }));
 
     await waitFor(() =>
       expect(screen.queryByRole('listitem', { name: 'Lutte' })).not.toBeInTheDocument(),
@@ -210,12 +149,28 @@ describe('DisciplinesPage', () => {
     expect(deleted).toEqual([lutte.id]);
   });
 
+  it('AS10: keeps the discipline when the deletion is cancelled', async () => {
+    const { deleted } = fakeApi([lutte]);
+    const user = userEvent.setup();
+    await renderApp('/disciplines');
+
+    await user.click(await screen.findByRole('button', { name: 'Supprimer Lutte' }));
+    const dialog = await screen.findByRole('alertdialog');
+    await user.click(within(dialog).getByRole('button', { name: 'Annuler' }));
+
+    await waitFor(() => expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument());
+    expect(screen.getByRole('listitem', { name: 'Lutte' })).toBeInTheDocument();
+    expect(deleted).toEqual([]);
+  });
+
   it('AS11: says when the discipline no longer exists', async () => {
     fakeApi([lutte], { delete: { status: 404, code: 'DISCIPLINE_NOT_FOUND' } });
     const user = userEvent.setup();
-    renderWithQuery(<DisciplinesPage />);
+    await renderApp('/disciplines');
 
     await user.click(await screen.findByRole('button', { name: 'Supprimer Lutte' }));
+    const dialog = await screen.findByRole('alertdialog');
+    await user.click(within(dialog).getByRole('button', { name: 'Supprimer' }));
 
     expect(await screen.findByRole('alert')).toHaveTextContent('Cette discipline n’existe plus.');
   });
