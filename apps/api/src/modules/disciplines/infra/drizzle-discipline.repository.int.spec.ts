@@ -41,4 +41,46 @@ describe('DrizzleDisciplineRepository (in-memory PGlite, migrations applied)', (
     expect(names).toEqual([...names].sort());
     expect(names).toEqual(expect.arrayContaining(['Badminton', 'Zumba']));
   });
+
+  it('AS6: finds a discipline by its id', async () => {
+    const discipline = newDiscipline('Judo');
+    await repository.insert(discipline);
+
+    expect(await repository.findById(discipline.id)).toEqual(discipline);
+    expect(await repository.findById(randomUUID())).toBeNull();
+  });
+
+  it('AS7: writes a new name and a new category', async () => {
+    const discipline = newDiscipline('Voile');
+    await repository.insert(discipline);
+
+    discipline.rename('Voile légère');
+    discipline.changeCategory('sports-nautiques');
+    await repository.update(discipline);
+
+    expect(await repository.findById(discipline.id)).toMatchObject({
+      name: 'Voile légère',
+      category: 'sports-nautiques',
+    });
+  });
+
+  it('AS9: turns the name unique constraint into a domain error on update', async () => {
+    await repository.insert(newDiscipline('Karaté'));
+    const other = newDiscipline('Taekwondo');
+    await repository.insert(other);
+
+    other.rename('Karaté');
+    await expect(repository.update(other)).rejects.toMatchObject({
+      code: 'DISCIPLINE_NAME_TAKEN',
+    });
+  });
+
+  it('AS10: deletes a discipline and says whether it existed', async () => {
+    const discipline = newDiscipline('Cyclisme');
+    await repository.insert(discipline);
+
+    expect(await repository.delete(discipline.id)).toBe(true);
+    expect(await repository.findById(discipline.id)).toBeNull();
+    expect(await repository.delete(discipline.id)).toBe(false);
+  });
 });

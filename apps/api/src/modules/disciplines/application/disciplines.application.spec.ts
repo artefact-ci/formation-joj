@@ -1,13 +1,19 @@
 import { describe, expect, it } from 'vitest';
 import { InMemoryDisciplineRepository } from './testing/in-memory-discipline.repository';
 import { CreateDiscipline } from './use-cases/create-discipline';
+import { DeleteDiscipline } from './use-cases/delete-discipline';
+import { GetDiscipline } from './use-cases/get-discipline';
 import { ListDisciplines } from './use-cases/list-disciplines';
+import { UpdateDiscipline } from './use-cases/update-discipline';
 
 function setup() {
   const disciplines = new InMemoryDisciplineRepository();
   return {
     createDiscipline: new CreateDiscipline(disciplines),
     listDisciplines: new ListDisciplines(disciplines),
+    getDiscipline: new GetDiscipline(disciplines),
+    updateDiscipline: new UpdateDiscipline(disciplines),
+    deleteDiscipline: new DeleteDiscipline(disciplines),
   };
 }
 
@@ -43,5 +49,69 @@ describe('disciplines (application layer)', () => {
     }
     const names = (await listDisciplines.execute()).map((discipline) => discipline.name);
     expect(names).toEqual(['Basketball 3x3', 'Lutte', 'Natation']);
+  });
+
+  it('AS6: gets a discipline by its id', async () => {
+    const { createDiscipline, getDiscipline } = setup();
+    const created = await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
+    expect(await getDiscipline.execute(created.id)).toEqual(created);
+  });
+
+  it('AS7: persists a new name and a new category', async () => {
+    const { createDiscipline, updateDiscipline, getDiscipline } = setup();
+    const { id } = await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
+
+    const updated = await updateDiscipline.execute(id, {
+      name: 'Lutte sénégalaise',
+      category: 'athletisme',
+    });
+
+    expect(updated).toMatchObject({ id, name: 'Lutte sénégalaise', category: 'athletisme' });
+    expect(await getDiscipline.execute(id)).toEqual(updated);
+  });
+
+  it('AS8: rejects an invalid update and keeps the discipline unchanged', async () => {
+    const { createDiscipline, updateDiscipline, getDiscipline } = setup();
+    const { id } = await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
+
+    await expect(updateDiscipline.execute(id, { name: ' ' })).rejects.toMatchObject({
+      code: 'DISCIPLINE_NAME_REQUIRED',
+    });
+    expect(await getDiscipline.execute(id)).toMatchObject({ name: 'Lutte' });
+  });
+
+  it('AS9: rejects a name taken by another discipline, but keeps its own name', async () => {
+    const { createDiscipline, updateDiscipline } = setup();
+    await createDiscipline.execute({ name: 'Natation', category: 'sports-nautiques' });
+    const { id } = await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
+
+    await expect(updateDiscipline.execute(id, { name: 'Natation' })).rejects.toMatchObject({
+      code: 'DISCIPLINE_NAME_TAKEN',
+      kind: 'CONFLICT',
+    });
+    await expect(
+      updateDiscipline.execute(id, { name: 'Lutte', category: 'athletisme' }),
+    ).resolves.toMatchObject({ name: 'Lutte', category: 'athletisme' });
+  });
+
+  it('AS10: deletes a discipline', async () => {
+    const { createDiscipline, deleteDiscipline, listDisciplines } = setup();
+    const { id } = await createDiscipline.execute({ name: 'Lutte', category: 'sports-de-combat' });
+
+    await deleteDiscipline.execute(id);
+
+    expect(await listDisciplines.execute()).toEqual([]);
+  });
+
+  it('AS11: reports an unknown discipline as not found', async () => {
+    const { getDiscipline, updateDiscipline, deleteDiscipline } = setup();
+    const unknown = '0199f5c2-0000-7000-8000-00000000ffff';
+    const notFound = { code: 'DISCIPLINE_NOT_FOUND', kind: 'NOT_FOUND' };
+
+    await expect(getDiscipline.execute(unknown)).rejects.toMatchObject(notFound);
+    await expect(updateDiscipline.execute(unknown, { name: 'Lutte' })).rejects.toMatchObject(
+      notFound,
+    );
+    await expect(deleteDiscipline.execute(unknown)).rejects.toMatchObject(notFound);
   });
 });

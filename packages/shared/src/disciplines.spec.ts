@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createDisciplineSchema } from './disciplines.ts';
+import { createDisciplineSchema, updateDisciplineSchema } from './disciplines.ts';
 
 describe('createDisciplineSchema', () => {
   it('AS1: accepts a name and a listed category, and trims the name', () => {
@@ -17,4 +17,20 @@ describe('createDisciplineSchema', () => {
       false,
     );
   });
+});
+
+describe('updateDisciplineSchema', () => {
+  it('AS7: accepts a new name, a new category, or both', () => {
+    expect(updateDisciplineSchema.parse({ name: ' Lutte ' })).toEqual({ name: 'Lutte' });
+    expect(updateDisciplineSchema.parse({ category: 'athletisme' })).toEqual({
+      category: 'athletisme',
+    });
+  });
+
+  it.each([{ name: ' ' }, { category: 'jeux' }, {}])(
+    'AS8: rejects an empty name, an unlisted category or an empty update (%j)',
+    (body) => {
+      expect(updateDisciplineSchema.safeParse(body).success).toBe(false);
+    },
+  );
 });
