@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NativeSelect } from '@/components/ui/native-select';
-import { useCreateDiscipline } from '../api/disciplines.api';
+import { useCreateDiscipline } from '../api/disciplines.queries';
 import { CATEGORY_LABELS } from './category-labels';
 import { errorMessage } from './error-message';
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from '@tanstack/react-router';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { disciplineKeys, useDeleteDiscipline, useDiscipline } from '../api/disciplines.api';
+import { disciplineKeys, useDeleteDiscipline, useDiscipline } from '../api/disciplines.queries';
 import { CATEGORY_LABELS } from './category-labels';
 import { DeleteDisciplineButton } from './delete-discipline-button';
 import { DisciplineEditForm } from './discipline-edit-form';

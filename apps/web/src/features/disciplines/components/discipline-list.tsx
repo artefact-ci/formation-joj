@@ -2,7 +2,7 @@ import type { DisciplineResponse } from '@joj/shared';
 import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useDeleteDiscipline } from '../api/disciplines.api';
+import { useDeleteDiscipline } from '../api/disciplines.queries';
 import { CATEGORY_LABELS } from './category-labels';
 import { DeleteDisciplineButton } from './delete-discipline-button';
 import { DisciplineEditForm } from './discipline-edit-form';

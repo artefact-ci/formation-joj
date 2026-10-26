@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useDisciplines } from '../api/disciplines.api';
+import { useDisciplines } from '../api/disciplines.queries';
 import { DisciplineForm } from './discipline-form';
 import { DisciplineList } from './discipline-list';
 
