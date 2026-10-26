@@ -68,7 +68,7 @@ domain/        entités et règles métier, TypeScript pur (aucun import de Nest
   disciplines.errors.ts    DisciplineError extends AppError : codes stables et catégorie
 application/   cas d'usage, un par classe, méthode execute()
   discipline.repository.ts port : classe abstraite, ce dont les cas d'usage ont besoin
-  use-cases/               CreateDiscipline, ListDisciplines
+  use-cases/               Create, List, Get, Update, DeleteDiscipline
   testing/                 repository en mémoire, pour tester sans base
 infra/         persistance
   disciplines.schema.ts    table Drizzle (lue par drizzle-kit)

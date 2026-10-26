@@ -8,15 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NativeSelect } from '@/components/ui/native-select';
-import { ApiError } from '@/lib/api';
 import { useCreateDiscipline } from '../api/disciplines.api';
 import { CATEGORY_LABELS } from './category-labels';
-
-/** Messages affichés pour les codes d'erreur de l'API ; les autres gardent un message générique. */
-const ERROR_MESSAGES: Record<string, string> = {
-  DISCIPLINE_NAME_TAKEN: 'Une discipline porte déjà ce nom.',
-  VALIDATION_FAILED: 'Vérifiez le nom et la catégorie.',
-};
+import { errorMessage } from './error-message';
 
 export function DisciplineForm() {
   const [name, setName] = useState('');
@@ -78,8 +72,7 @@ export function DisciplineForm() {
       </Button>
       {apiError && (
         <p role="alert" className="text-sm text-destructive sm:basis-full">
-          {(apiError instanceof ApiError && ERROR_MESSAGES[apiError.code]) ||
-            'Une erreur est survenue. Réessayez.'}
+          {errorMessage(apiError)}
         </p>
       )}
     </form>
