@@ -20,7 +20,7 @@ export default defineConfig({
   test: {
     name: 'api',
     root: import.meta.dirname,
-    include: ['src/**/*.spec.ts', 'test/**/*.spec.ts'],
+    include: ['src/**/*.spec.ts', 'test/**/*.spec.ts', 'scripts/**/*.spec.mts'],
     environment: 'node',
     // Démarrer PGlite (WebAssembly) prend un peu de temps sur une machine modeste.
     hookTimeout: 30_000,
