@@ -13,6 +13,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    // Vérification de types seulement (tsc) : la compilation est faite par SWC et Vite.
+    "allowImportingTsExtensions": true
   }
 }
