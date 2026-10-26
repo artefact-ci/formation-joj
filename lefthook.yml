@@ -2,4 +2,4 @@
 pre-commit:
   jobs:
     - name: verify
-      run: pnpm -s verify
+      run: pnpm -s verify --staged

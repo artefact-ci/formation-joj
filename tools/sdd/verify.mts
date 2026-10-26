@@ -1,6 +1,7 @@
 /**
  * `pnpm verify` : vérifie les fichiers modifiés depuis le dernier commit (index, arbre de travail,
- * fichiers nouveaux et supprimés). Voir lib/verify-plan.mts. Lefthook le lance avant chaque commit.
+ * fichiers nouveaux et supprimés), ou seulement l'index avec --staged (lefthook, avant chaque
+ * commit). Voir lib/verify-plan.mts.
  */
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -11,10 +12,16 @@ import { verifyCommands } from './lib/verify-plan.mts';
 
 const OUTPUT_TAIL_LINES = 40;
 
-function changedFiles(): string[] {
+/** Avec --staged (lefthook) : seulement ce qui part dans le commit. */
+function changedFiles(staged: boolean): string[] {
+  if (staged) return lines(run('git', ['diff', '--cached', '--name-only']).output);
   const diff = run('git', ['diff', 'HEAD', '--name-only']);
   const untracked = run('git', ['ls-files', '--others', '--exclude-standard']);
-  return [...new Set([...diff.output.split('\n'), ...untracked.output.split('\n')])]
+  return lines(`${diff.output}\n${untracked.output}`);
+}
+
+function lines(output: string): string[] {
+  return [...new Set(output.split('\n'))]
     .map((file) => file.trim())
     .filter(Boolean)
     .sort();
@@ -38,7 +45,7 @@ function workspacePackages(): WorkspacePackage[] {
   );
 }
 
-const files = changedFiles();
+const files = changedFiles(process.argv.includes('--staged'));
 const existing = files.filter((file) => existsSync(join(PROJECT_DIR, file)));
 const commands = verifyCommands(files, existing, workspacePackages());
 if (commands.length === 0) {
