@@ -1,7 +1,5 @@
+# La même vérification que les skills : format, lint, types et tests liés aux fichiers modifiés.
 pre-commit:
-  parallel: true
   jobs:
-    - name: lint
-      run: pnpm -s lint
-    - name: format
-      run: pnpm -s format:check
+    - name: verify
+      run: pnpm -s verify
