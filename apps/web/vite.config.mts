@@ -12,7 +12,12 @@ export default defineConfig({
   },
   plugins: [
     // Génère src/routeTree.gen.ts à partir des fichiers de src/routes.
-    tanstackRouter({ target: 'react', autoCodeSplitting: true }),
+    tanstackRouter({
+      target: 'react',
+      autoCodeSplitting: true,
+      // Les tests d'une route peuvent vivre à côté d'elle sans devenir une route.
+      routeFileIgnorePattern: '\\.test\\.',
+    }),
     react(),
     tailwindcss(),
   ],
@@ -27,7 +32,11 @@ export default defineConfig({
   test: {
     name: 'web',
     environment: 'jsdom',
-    include: ['src/**/*.spec.{ts,tsx}'],
+    include: ['src/**/*.test.{ts,tsx}'],
+    // Pas de CSS dans jsdom : plus rapide, et aucun test ne doit dépendre d'un style.
+    css: false,
+    // Chaque `vi.spyOn` est défait après son test.
+    restoreMocks: true,
     setupFiles: ['./src/test/setup.ts'],
   },
 });

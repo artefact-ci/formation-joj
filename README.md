@@ -52,9 +52,11 @@ apps/
     test/                   tests e2e de l'API (supertest)
   web/                      React 19 + Vite
     src/routes/             pages (TanStack Router, un fichier = une route)
-    src/features/<nom>/     api/ (TanStack Query) et components/ d'une fonctionnalité
+    src/features/<nom>/     api/ (appels HTTP et hooks TanStack Query) et components/
     src/components/ui/      composants shadcn
     src/lib/api/            client HTTP typé
+    src/mocks/              la fausse API des tests (MSW), au même contrat que apps/api
+    src/test/               setup Vitest, fonctions de rendu, audit d'accessibilité
 packages/
   shared/                   schémas Zod et types partagés par l'API et le front
 .claude/                    hooks et sous-agent relecteur de Claude Code
@@ -106,7 +108,20 @@ Dans cet ordre, en écrivant chaque test avant le code et en le voyant échouer.
 4. **Table et migration** : `infra/<nom>.schema.ts`, puis `pnpm db:generate --name=<sujet>`.
 5. **Repository Drizzle** : `infra/<entité>.mapper.ts`, `infra/drizzle-….repository.ts` et son test d'intégration `*.int.spec.ts` (PGlite en mémoire).
 6. **Controller et test e2e** : `http/<nom>.controller.ts`, `<nom>.module.ts` ajouté aux `imports` de `src/app.module.ts`, puis `test/<nom>.e2e.spec.ts`.
-7. **Écran** : `apps/web/src/features/<nom>/api/` (requêtes), `components/` et leur test (MSW), puis la route dans `apps/web/src/routes/`.
+7. **Fausse API** : les routes dans `apps/web/src/mocks/handlers.ts` (mêmes schémas, mêmes codes d'erreur que l'API), leurs données dans `fixture.ts`, et `handlers.test.ts`.
+8. **Écran** : dans `apps/web/src/features/<nom>/`, `api/<nom>.api.ts` (appels HTTP), `api/<nom>.queries.ts` (hooks) et leur test, puis `components/` et leurs tests, puis la route dans `apps/web/src/routes/` et son audit `*.a11y.test.tsx`.
+
+## Tests du front
+
+Un test s'appelle `<fichier>.test.tsx` et se place à côté de ce qu'il teste. Il commence par un court commentaire qui dit ce qu'il prouve.
+
+- **Une seule fausse API** (`src/mocks/`), servie par MSW à tous les tests. Une requête qu'elle ne connaît pas fait échouer le test. Elle garde ses données en mémoire : un test les prépare en modifiant `fixture` (`fixture.disciplines = []`). `mockControl` simule une latence (`setLatency(50)`) ou une panne (`failNext('GET /api/disciplines')`, `failPersistently(...)`). Tout est remis à zéro après chaque test.
+- **Rendre** (`src/test/utils.tsx`) : `renderRoute({ initialEntries: ['/disciplines'] })` monte l'application à une adresse, comme `main.tsx`. `renderWithProviders(<Composant />)` monte un composant seul, avec Query et un vrai router.
+- **Vérifier ce qui part sur le réseau** : `trackRequests()` enregistre méthode, chemin et corps de chaque requête ; `writes(seen)` ne garde que les écritures.
+- **Hooks** : `renderHook` avec un `QueryClient`, pour vérifier ce qui est invalidé dans le cache.
+- **Accessibilité** : `expect(axeFindings(await runAxe())).toEqual([])` audite toute la page, boîtes de dialogue comprises. Un audit par état de l'écran.
+
+Côté API, les tests s'appellent `*.spec.ts` (unitaires), `*.int.spec.ts` (intégration) et `*.e2e.spec.ts`.
 
 Un composant shadcn de plus : `pnpm dlx shadcn@latest add <composant>` dans `apps/web`.
 

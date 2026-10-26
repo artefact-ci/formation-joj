@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { server } from '@/test/msw-server';
+import { server } from '@/mocks/node';
 import { createApiClient } from './api-client';
 import { ApiError } from './api-error';
 

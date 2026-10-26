@@ -1,15 +1,23 @@
+/**
+ * La page /disciplines/:id, montée par sa vraie route sur la fausse API : affichage,
+ * modification, suppression confirmée qui ramène à la liste, et discipline introuvable.
+ */
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
-import { renderApp } from '@/test/render';
-import { fakeApi, lutte, natation } from '../testing/fake-disciplines-api';
+import { lutte, UNKNOWN_ID } from '@/mocks/fixture';
+import { renderRoute, trackRequests, writes } from '@/test/utils';
 
-const detailPath = (id: string) => `/disciplines/${id}`;
+async function open(id: string) {
+  const user = userEvent.setup();
+  const seen = trackRequests();
+  const { router } = await renderRoute({ initialEntries: [`/disciplines/${id}`] });
+  return { user, seen, router };
+}
 
 describe('DisciplineDetailPage', () => {
   it('AS6: shows the name, the category and the creation date of a discipline', async () => {
-    fakeApi([lutte, natation]);
-    await renderApp(detailPath(lutte.id));
+    await open(lutte.id);
 
     expect(await screen.findByRole('heading', { level: 1, name: 'Lutte' })).toBeInTheDocument();
     expect(screen.getByText('Sports de combat')).toBeInTheDocument();
@@ -21,9 +29,7 @@ describe('DisciplineDetailPage', () => {
   });
 
   it('AS7: edits the discipline from its detail page', async () => {
-    const { patched } = fakeApi([lutte]);
-    const user = userEvent.setup();
-    await renderApp(detailPath(lutte.id));
+    const { user, seen } = await open(lutte.id);
 
     await user.click(await screen.findByRole('button', { name: 'Modifier' }));
     await user.clear(screen.getByLabelText('Nouveau nom'));
@@ -33,15 +39,17 @@ describe('DisciplineDetailPage', () => {
     expect(
       await screen.findByRole('heading', { level: 1, name: 'Lutte sénégalaise' }),
     ).toBeInTheDocument();
-    expect(patched).toEqual([
-      { id: lutte.id, body: { name: 'Lutte sénégalaise', category: 'sports-de-combat' } },
+    expect(writes(seen)).toEqual([
+      {
+        method: 'PATCH',
+        path: `/api/disciplines/${lutte.id}`,
+        body: { name: 'Lutte sénégalaise', category: 'sports-de-combat' },
+      },
     ]);
   });
 
   it('AS10: deletes the discipline after confirmation and goes back to the list', async () => {
-    const { deleted } = fakeApi([lutte, natation]);
-    const user = userEvent.setup();
-    const { router } = await renderApp(detailPath(lutte.id));
+    const { user, seen, router } = await open(lutte.id);
 
     await user.click(await screen.findByRole('button', { name: 'Supprimer Lutte' }));
     const dialog = await screen.findByRole('alertdialog', { name: 'Supprimer « Lutte » ?' });
@@ -50,12 +58,13 @@ describe('DisciplineDetailPage', () => {
     await waitFor(() => expect(router.state.location.pathname).toBe('/disciplines'));
     expect(await screen.findByRole('listitem', { name: 'Natation' })).toBeInTheDocument();
     expect(screen.queryByRole('listitem', { name: 'Lutte' })).not.toBeInTheDocument();
-    expect(deleted).toEqual([lutte.id]);
+    expect(writes(seen)).toEqual([
+      { method: 'DELETE', path: `/api/disciplines/${lutte.id}`, body: undefined },
+    ]);
   });
 
   it('AS11: says when the discipline does not exist', async () => {
-    fakeApi([lutte]);
-    await renderApp(detailPath('0199f5c2-0000-7000-8000-00000000ffff'));
+    await open(UNKNOWN_ID);
 
     expect(await screen.findByRole('alert')).toHaveTextContent('Cette discipline n’existe plus.');
     expect(screen.getByRole('link', { name: 'Toutes les disciplines' })).toBeInTheDocument();
