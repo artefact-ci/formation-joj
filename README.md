@@ -36,6 +36,8 @@ Pour des données de démo : arrêter `pnpm dev` (Ctrl+C), lancer `pnpm db:seed`
 | `pnpm format`      | formate tout (oxfmt) ; `pnpm format:check` vérifie seulement         |
 | `pnpm typecheck`   | TypeScript sur tout le repo                                          |
 | `pnpm build`       | build de l'API (SWC) et du front (Vite)                              |
+| `pnpm check`       | tout le dépôt : format, lint, types, tous les tests, build           |
+| `pnpm verify`      | les seuls fichiers modifiés : format, lint, types, tests liés        |
 | `pnpm db:generate` | génère une migration après un changement de schéma Drizzle           |
 | `pnpm db:seed`     | applique les migrations et charge `apps/api/data/*.json`             |
 | `pnpm db:reset`    | vide la base locale, applique les migrations et recharge les données |
@@ -59,7 +61,9 @@ apps/
     src/test/               setup Vitest, fonctions de rendu, audit d'accessibilité
 packages/
   shared/                   schémas Zod et types partagés par l'API et le front
-.claude/                    hooks et sous-agent relecteur de Claude Code
+specs/                      constitution et specs des fonctionnalités (voir Méthode)
+tools/sdd/                  scripts des skills : spec:check, tdd:red, verify
+.claude/                    hooks, skills et sous-agent relecteur de Claude Code
 ```
 
 Un module de domaine de l'API, par exemple `src/modules/disciplines/` :
@@ -100,7 +104,7 @@ Le code ne dépend pas du mode : un seul provider Nest fournit l'instance Drizzl
 
 ## Ajouter une fonctionnalité
 
-Dans cet ordre, en écrivant chaque test avant le code et en le voyant échouer. Les titres des tests (`describe`, `it`) s'écrivent en anglais et commencent par l'identifiant du scénario : `it('AS2: rejects a discipline without a name', …)`. Modèle : `disciplines`.
+Dans cet ordre, en écrivant chaque test avant le code et en le voyant échouer. Les titres des tests (`describe`, `it`) s'écrivent en anglais et commencent par l'identifiant du scénario, précédé du numéro de la spec : `it('001-AS2: rejects a full slot', …)` (le module d'exemple `disciplines`, sans spec, écrit seulement `AS2:`). Modèle : `disciplines`. Avec Claude Code, la [méthode](#méthode) suit cet ordre pour toi.
 
 1. **Schéma partagé** : `packages/shared/src/<nom>.ts` (schémas Zod d'entrée et de réponse), exporté par `index.ts`.
 2. **Entité et son test** : `domain/<entité>.ts`, `domain/<nom>.errors.ts`, `domain/<entité>.spec.ts`.
@@ -130,9 +134,31 @@ Un composant shadcn de plus : `pnpm dlx shadcn@latest add <composant>` dans `app
 Configurés dans `.claude/settings.json`, écrits en Node dans `.claude/hooks/` et testés (`pnpm test`) :
 
 - **Fin de tour (Stop)** : vérifie le format, le lint et les types des seuls fichiers changés. En cas d'échec, Claude reprend la main avec l'erreur. Si l'échec persiste au tour suivant, il est seulement signalé, pour ne pas tourner en boucle. Pour le couper le temps d'une session : `STOP_CHECK=off claude` (sous PowerShell : `$env:STOP_CHECK='off'; claude`).
-- **Avant une commande Bash** : refuse un `git commit` dont le message ne suit pas [Conventional Commits](https://www.conventionalcommits.org/fr/) (`feat(api): add disciplines`), en expliquant pourquoi.
+- **Avant une commande Bash** : refuse un `git commit` dont le message ne suit pas [Conventional Commits](https://www.conventionalcommits.org/fr/) (`feat(api): add disciplines`), ou qui saute la vérification de pré-commit (`--no-verify`, `-n`, `LEFTHOOK=0`), en expliquant pourquoi.
 - **Avant une écriture de fichier** : refuse d'écrire un secret probable (clé d'API, token, mot de passe en clair, clé privée). Les vraies valeurs vont dans `apps/api/.env`, ignoré par git.
 
 Le sous-agent **relecteur** (`.claude/agents/relecteur.md`) relit une fonctionnalité dans un contexte vierge. Il ne modifie rien et rend un verdict, preuves à l'appui, selon une grille courte (`relecteur-grille.md`) : chaque scénario a un test, aucune règle métier dans le controller, `domain/` reste pur, les erreurs passent par `AppError`. Dans Claude Code : « relis cette fonctionnalité avec le relecteur ».
 
-Côté git, lefthook lance `pnpm lint` et `pnpm format:check` avant chaque commit.
+Côté git, lefthook lance `pnpm verify --staged` avant chaque commit : format, lint, types et tests liés aux fichiers commités.
+
+## Méthode
+
+Développement guidé par la spec, en quatre commandes Claude Code et deux validations humaines :
+
+```
+/spec <besoin>  → specs/NNN-nom/spec.md (Brouillon) ── tu relis et valides → Validée
+/spec-plan      → plan.md : fichiers, erreurs, tests, 6 tâches au plus ── tu valides → Validé
+/tdd-task [Tnn] → pour chaque tâche : test rouge → code → vert → un commit
+/converge       → traçabilité + pnpm check + relecteur → « Converged » (spec Implémentée)
+```
+
+- **`/spec <besoin>`** : le quoi et le pourquoi, sans technique, avec des scénarios `AS1`, `AS2`…
+- **`/spec-plan`** : le comment, sur le modèle du module `disciplines`, un test prévu par scénario.
+- **`/tdd-task`** : une tâche (`/tdd-task T03`) ou toutes ; `pnpm tdd:red` prouve que le test échoue pour la bonne raison.
+- **`/converge`** : si un manque reste, il devient une tâche ; après deux passages, c'est toi qui tranches.
+
+Les règles communes sont dans `specs/constitution.md`. Les scripts `pnpm spec:check`, `tdd:red` et `verify` (`tools/sdd/`) sont les outils des skills ; pour toi, une seule commande : `pnpm check`.
+
+Les hooks (voir ci-dessus) refusent un commit mal nommé ou qui saute `pnpm verify`, et vérifient format, lint et types à chaque fin de tour (`STOP_CHECK=off claude` pour couper ce dernier).
+
+Ces commandes sont une version réduite de [Spec Kit](https://github.com/github/spec-kit) : `/spec` ≈ `/speckit.specify`, `/spec-plan` ≈ `/speckit.plan` + `/speckit.tasks`, `/tdd-task` ≈ `/speckit.implement`, `/converge` ≈ `/speckit.analyze` plus une relecture. Pour passer au cycle complet après la formation (constitution, clarify, checklist), installe la CLI `specify` (Python, via `uv`) et lance `specify init --here --ai claude` dans ton projet.
