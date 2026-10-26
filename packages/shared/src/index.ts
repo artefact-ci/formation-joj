@@ -1,1 +1,1 @@
-export const PLACEHOLDER = 'shared';
+export * from './problem-details.ts';
