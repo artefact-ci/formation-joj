@@ -39,7 +39,7 @@ Ne lui donne ni résumé, ni liste de fichiers, ni ton avis. Il rend un verdict 
 
 **Sinon** :
 
-- ajoute à la fin de `plan.md` (en créant `## Corrections` si besoin) une section `### Passage N` ;
+- ajoute à la fin de `plan.md` (en créant `## 7. Corrections` si besoin) une section `### Passage N` ;
 - une tâche par manque, numérotée à la suite (`- [ ] T07 [NNN-AS2] Écrire d'abord … puis …`), qui cite le scénario concerné et la preuve (commande en échec, ou fichier:ligne du relecteur) ;
 - `pnpm spec:check specs/NNN-nom`, puis `git add -A && git commit -m "docs(<module>): add corrections from converge pass N"` ;
 - termine par :

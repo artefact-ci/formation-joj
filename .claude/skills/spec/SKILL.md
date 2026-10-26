@@ -41,6 +41,6 @@ Montre à l'utilisateur la liste des scénarios (identifiant et titre) et les qu
 
 **Ne passe pas à la suite.** Le statut reste `Brouillon` tant que l'utilisateur n'a pas dit explicitement qu'il valide (« je valide », « ok pour la spec »). Une remarque n'est pas une validation : corrige la spec et redemande.
 
-Sur accord explicite seulement : remplace `**Statut** : Brouillon` par `**Statut** : Validée`, relance `pnpm spec:check`, puis termine par :
+Sur accord explicite seulement : remplace `**Statut** : Brouillon` par `**Statut** : Validée`, relance `pnpm spec:check`, puis `git add specs/NNN-nom && git commit -m "docs(<module>): add validated spec NNN"`, et termine par :
 
 > Spec validée. Prochaine étape : `/spec-plan`

@@ -72,7 +72,7 @@ describe('tasks', () => {
         done: true,
         scenario: '001-AS1',
         text: "Écrire d'abord domain/inscription.spec.ts, puis l'entité",
-        line: 28,
+        line: 32,
         section: 'Tâches',
       },
       {
@@ -80,7 +80,7 @@ describe('tasks', () => {
         done: false,
         scenario: '001-AS2',
         text: "Écrire d'abord test/benevoles.e2e.spec.ts, puis la route",
-        line: 29,
+        line: 33,
         section: 'Tâches',
       },
     ]);
@@ -112,7 +112,7 @@ describe('checkPlan', () => {
     assert.deepEqual(problems, [
       {
         file: 'plan.md',
-        line: 29,
+        line: 33,
         message:
           "tâche mal formée : « - [ ] T2 [AS2] Écrire d'abord test/benevoles.e2e.spec.ts, puis la route » (attendu « - [ ] T01 [001-AS1] texte »)",
       },
@@ -136,15 +136,15 @@ describe('checkPlan', () => {
         const id = String(from + i).padStart(2, '0');
         return `- [ ] T${id} [001-AS1] tâche ${id}`;
       }).join('\n');
-    const seven = PLAN.replace(/## Tâches[\s\S]*$/, `## Tâches\n\n${lines(1, 7)}\n`);
+    const seven = PLAN.replace(/## 6\. Tâches[\s\S]*$/, `## 6. Tâches\n\n${lines(1, 7)}\n`);
     assert.match(
       messages(checkPlan('plan.md', seven, '001', ids)).join(),
       /7 tâches \(6 au plus\)/,
     );
 
     const corrected = PLAN.replace(
-      /## Tâches[\s\S]*$/,
-      `## Tâches\n\n${lines(1, 6)}\n\n## Corrections\n\n### Passage 1\n\n${lines(7, 2)}\n`,
+      /## 6\. Tâches[\s\S]*$/,
+      `## 6. Tâches\n\n${lines(1, 6)}\n\n## 7. Corrections\n\n### Passage 1\n\n${lines(7, 2)}\n`,
     );
     assert.deepEqual(checkPlan('plan.md', corrected, '001', ids), []);
     assert.deepEqual(
@@ -155,8 +155,23 @@ describe('checkPlan', () => {
     );
   });
 
+  it('requires a summary first, numbered sections being optional', () => {
+    const noSummary = PLAN.replace(/## 1\. Résumé\n\n.*\n\n/, '');
+    assert.match(
+      messages(checkPlan('plan.md', noSummary, '001', ids)).join(),
+      /section « Résumé » absente/,
+    );
+    const unnumbered = PLAN.replace(/^## \d+\. /gm, '## ');
+    assert.deepEqual(checkPlan('plan.md', unnumbered, '001', ids), []);
+  });
+
   it('requires the sections of the plan', () => {
-    const problems = checkPlan('plan.md', PLAN.replace('## Erreurs', '## Soucis'), '001', ids);
+    const problems = checkPlan(
+      'plan.md',
+      PLAN.replace('## 4. Erreurs', '## 4. Soucis'),
+      '001',
+      ids,
+    );
     assert.match(messages(problems).join(), /section « Erreurs » absente/);
   });
 });

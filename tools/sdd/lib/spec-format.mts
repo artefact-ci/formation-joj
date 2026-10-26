@@ -30,7 +30,14 @@ const SPEC_SECTIONS = [
   'Hors périmètre',
   'Questions ouvertes',
 ];
-const PLAN_SECTIONS = ['Fichiers par couche', 'Données', 'Erreurs', 'Tests par scénario', 'Tâches'];
+const PLAN_SECTIONS = [
+  'Résumé',
+  'Fichiers par couche',
+  'Données',
+  'Erreurs',
+  'Tests par scénario',
+  'Tâches',
+];
 const MAX_SPEC_LINES = 60;
 const MAX_TASKS = 6;
 
@@ -42,7 +49,7 @@ interface Line {
   text: string;
   /** Numéro de ligne, à partir de 1. */
   line: number;
-  /** Titre de la section `##` qui contient la ligne. */
+  /** Titre de la section `##` qui contient la ligne, sans son numéro. */
   section: string;
 }
 
@@ -50,7 +57,8 @@ function lines(text: string): Line[] {
   let section = '';
   const all = text.replace(/\r\n/g, '\n').replace(/\n$/, '').split('\n');
   return all.map((raw, index) => {
-    const heading = /^## (.+?)\s*$/.exec(raw);
+    // `## 2. Données` et `## Données` sont la même section : la numérotation est facultative.
+    const heading = /^## (?:\d+\.\s+)?(.+?)\s*$/.exec(raw);
     if (heading?.[1]) section = heading[1];
     return { text: raw, line: index + 1, section };
   });

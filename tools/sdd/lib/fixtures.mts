@@ -38,28 +38,32 @@ export const PLAN = `# 001 — Bénévoles : plan
 
 **Statut** : Brouillon
 
-## Fichiers par couche
+## 1. Résumé
+
+On permet d'inscrire des bénévoles sur les créneaux d'une discipline.
+
+## 2. Fichiers par couche
 
 - shared : packages/shared/src/benevoles.ts
 
-## Données
+## 3. Données
 
 Table inscriptions.
 
-## Erreurs
+## 4. Erreurs
 
 | Code | Catégorie | HTTP |
 | --- | --- | --- |
 | CRENEAU_COMPLET | CONFLICT | 409 |
 
-## Tests par scénario
+## 5. Tests par scénario
 
 | Scénario | Test | Niveau |
 | --- | --- | --- |
 | AS1 | domain/inscription.spec.ts | unitaire |
 | AS2 | test/benevoles.e2e.spec.ts | e2e |
 
-## Tâches
+## 6. Tâches
 
 - [x] T01 [001-AS1] Écrire d'abord domain/inscription.spec.ts, puis l'entité
 - [ ] T02 [001-AS2] Écrire d'abord test/benevoles.e2e.spec.ts, puis la route

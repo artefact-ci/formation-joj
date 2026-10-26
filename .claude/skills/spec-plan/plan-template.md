@@ -2,37 +2,49 @@
 
 **Statut** : Brouillon
 
-## Fichiers par couche
+## 1. Résumé
 
-Sur le modèle de `apps/api/src/modules/disciplines/`. Une ligne par fichier créé ou modifié.
+En trois à cinq phrases complètes : ce que l'on construit, ce que l'utilisateur pourra faire une fois les tâches terminées, comment c'est découpé (combien de tâches, dans quel ordre) et ce qui est laissé de côté.
 
-- **shared** : `packages/shared/src/<nom>.ts` (schémas Zod), export dans `index.ts`
-- **domain** : `apps/api/src/modules/<nom>/domain/…`
-- **application** : port, repository en mémoire, cas d'usage
-- **infra** : table Drizzle, mapper, repository
-- **http** : controller, module ajouté à `app.module.ts`
-- **web** : fausse API (`src/mocks/`), `features/<nom>/`, route
+Les mots de la spec et leur nom dans le code :
 
-## Données
+| Dans la spec | Dans le code | Ce que c'est              |
+| ------------ | ------------ | ------------------------- |
+| <mot>        | `<Nom>`      | <définition en une ligne> |
 
-Table, colonnes et contraintes. Migration : `pnpm db:generate --name=<sujet>`.
+## 2. Fichiers par couche
 
-## Erreurs
+Une phrase pour dire quel module on crée et lequel sert de modèle (par exemple : « On crée le module `<nom>`, organisé comme le module Disciplines : un dossier par couche. »). Puis, couche par couche, chaque fichier créé ou modifié suivi de son rôle en une phrase.
 
-| Code AppError | Catégorie | HTTP | Scénario |
-| ------------- | --------- | ---- | -------- |
-| `<NOM>_…`     | CONFLICT  | 409  | AS2      |
+- **shared** : `packages/shared/src/<nom>.ts` contient les schémas Zod des données échangées entre l'API et le front.
+- **domain** : …
+- **application** : …
+- **infra** : …
+- **http** : … Pour chaque route : la méthode, le chemin, ce qu'elle fait et ce qu'elle renvoie.
+- **web** : … (ou « rien : l'écran est hors périmètre »)
 
-## Tests par scénario
+## 3. Données
 
-Un test au moins par scénario, au niveau le plus bas qui prouve son « Alors ».
+Une phrase sur ce que l'on stocke. Puis chaque table, ses colonnes et ses contraintes, en disant quelle règle chaque contrainte protège. Migration : `pnpm db:generate --name=<sujet>`.
 
-| Scénario | Fichier de test                   | Niveau   |
-| -------- | --------------------------------- | -------- |
-| AS1      | `apps/api/test/<nom>.e2e.spec.ts` | e2e      |
-| AS2      | `…/domain/<entité>.spec.ts`       | unitaire |
+## 4. Erreurs
 
-## Tâches
+Chaque refus de la spec devient une erreur métier (`AppError`), avec un code stable et un statut HTTP.
+
+| Code AppError | Catégorie | HTTP | Quand                        | Scénario |
+| ------------- | --------- | ---- | ---------------------------- | -------- |
+| `<NOM>_…`     | CONFLICT  | 409  | <la situation, en une ligne> | AS2      |
+
+## 5. Tests par scénario
+
+Chaque scénario de la spec est prouvé par au moins un test, au niveau le plus bas qui suffit.
+
+| Scénario | Fichier de test                   | Niveau   | Ce que le test vérifie |
+| -------- | --------------------------------- | -------- | ---------------------- |
+| AS1      | `apps/api/test/<nom>.e2e.spec.ts` | e2e      | <le « Alors »>         |
+| AS2      | `…/domain/<entité>.spec.ts`       | unitaire | <le « Alors »>         |
+
+## 6. Tâches
 
 Six au plus, dans l'ordre des couches. Chaque tâche nomme le test à écrire d'abord ; elle tient dans un commit.
 
