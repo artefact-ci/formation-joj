@@ -7,6 +7,8 @@ const DISCIPLINE_ERROR_KINDS = {
   DISCIPLINE_NAME_TOO_LONG: 'VALIDATION',
   /** Catégorie absente de DISCIPLINE_CATEGORIES. */
   DISCIPLINE_CATEGORY_UNKNOWN: 'VALIDATION',
+  /** Aucune discipline n'a cet identifiant. */
+  DISCIPLINE_NOT_FOUND: 'NOT_FOUND',
   /** Une discipline porte déjà ce nom. */
   DISCIPLINE_NAME_TAKEN: 'CONFLICT',
 } as const satisfies Record<string, ErrorKind>;
@@ -23,4 +25,8 @@ export function disciplineNameTaken(name: string): DisciplineError {
   return new DisciplineError('DISCIPLINE_NAME_TAKEN', `A discipline named ${name} already exists`, {
     name,
   });
+}
+
+export function disciplineNotFound(id: string): DisciplineError {
+  return new DisciplineError('DISCIPLINE_NOT_FOUND', `No discipline with id ${id}`, { id });
 }

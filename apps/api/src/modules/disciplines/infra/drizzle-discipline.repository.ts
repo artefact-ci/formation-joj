@@ -15,6 +15,11 @@ export class DrizzleDisciplineRepository extends DisciplineRepository {
     super();
   }
 
+  async findById(id: string): Promise<Discipline | null> {
+    const [row] = await this.db.select().from(disciplines).where(eq(disciplines.id, id)).limit(1);
+    return row ? toDomain(row) : null;
+  }
+
   async findByName(name: string): Promise<Discipline | null> {
     const [row] = await this.db
       .select()
@@ -38,5 +43,25 @@ export class DrizzleDisciplineRepository extends DisciplineRepository {
       }
       throw error;
     }
+  }
+
+  async update(discipline: Discipline): Promise<void> {
+    const { id, name, category } = toRow(discipline);
+    try {
+      await this.db.update(disciplines).set({ name, category }).where(eq(disciplines.id, id));
+    } catch (error) {
+      if (isUniqueViolation(error, DISCIPLINES_NAME_KEY)) {
+        throw disciplineNameTaken(name);
+      }
+      throw error;
+    }
+  }
+
+  async delete(id: string): Promise<boolean> {
+    const deleted = await this.db
+      .delete(disciplines)
+      .where(eq(disciplines.id, id))
+      .returning({ id: disciplines.id });
+    return deleted.length > 0;
   }
 }

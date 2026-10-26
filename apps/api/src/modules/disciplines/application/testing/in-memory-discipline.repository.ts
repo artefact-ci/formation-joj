@@ -6,6 +6,11 @@ import { DisciplineRepository } from '../discipline.repository';
 export class InMemoryDisciplineRepository extends DisciplineRepository {
   private readonly rows = new Map<string, Discipline>();
 
+  async findById(id: string): Promise<Discipline | null> {
+    const found = this.rows.get(id);
+    return found ? clone(found) : null;
+  }
+
   async findByName(name: string): Promise<Discipline | null> {
     const found = [...this.rows.values()].find((discipline) => discipline.name === name);
     return found ? clone(found) : null;
@@ -18,11 +23,26 @@ export class InMemoryDisciplineRepository extends DisciplineRepository {
   }
 
   async insert(discipline: Discipline): Promise<void> {
-    // Comme la contrainte d'unicité en base.
-    if (await this.findByName(discipline.name)) {
-      throw disciplineNameTaken(discipline.name);
-    }
+    this.assertNameFree(discipline);
     this.rows.set(discipline.id, clone(discipline));
+  }
+
+  async update(discipline: Discipline): Promise<void> {
+    if (!this.rows.has(discipline.id)) return;
+    this.assertNameFree(discipline);
+    this.rows.set(discipline.id, clone(discipline));
+  }
+
+  async delete(id: string): Promise<boolean> {
+    return this.rows.delete(id);
+  }
+
+  /** Comme la contrainte d'unicité en base : une autre ligne ne peut pas porter ce nom. */
+  private assertNameFree(discipline: Discipline): void {
+    const taken = [...this.rows.values()].some(
+      (row) => row.name === discipline.name && row.id !== discipline.id,
+    );
+    if (taken) throw disciplineNameTaken(discipline.name);
   }
 }
 

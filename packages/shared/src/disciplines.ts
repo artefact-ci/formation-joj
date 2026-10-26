@@ -21,6 +21,17 @@ export const createDisciplineSchema = z.object({
 });
 export type CreateDisciplineInput = z.infer<typeof createDisciplineSchema>;
 
+/** Corps de `PATCH /api/disciplines/:id` : un nouveau nom, une nouvelle catégorie, ou les deux. */
+export const updateDisciplineSchema = createDisciplineSchema
+  .partial()
+  .refine((input) => input.name !== undefined || input.category !== undefined, {
+    message: 'Provide a name or a category',
+  });
+export type UpdateDisciplineInput = z.infer<typeof updateDisciplineSchema>;
+
+/** Paramètre `:id` des routes d'une discipline. */
+export const disciplineIdParamsSchema = z.object({ id: z.uuid() });
+
 /** Une discipline telle que l'API la renvoie. */
 export const disciplineSchema = z.object({
   id: z.uuid(),
