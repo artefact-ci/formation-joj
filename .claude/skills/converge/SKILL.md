@@ -23,9 +23,17 @@ Lance, et garde les sorties :
 
 ## 3. Faire relire
 
+Trouve la base : le commit qui précède l'ajout de la spec, pour que le relecteur ne voie que cette fonctionnalité, même si la branche en contient d'autres.
+
+```bash
+git log --diff-filter=A --format=%h -1 -- specs/NNN-nom/spec.md
+```
+
+La base est ce hash suivi de `^` (par exemple `3f2a1c9^`). Si la commande ne renvoie rien (spec jamais commitée), la base est `main`.
+
 Lance le sous-agent `relecteur` avec **seulement** ce message :
 
-> Base : main. Spec : specs/NNN-nom.
+> Base : <base>. Spec : specs/NNN-nom.
 
 Ne lui donne ni résumé, ni liste de fichiers, ni ton avis. Il rend un verdict : `Converged`, ou des écarts bloquants avec fichier et ligne.
 
