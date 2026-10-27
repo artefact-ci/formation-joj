@@ -2,10 +2,13 @@
 
 Ce dossier contient les énoncés de la journée. Ce fichier décrit le projet sur lequel tu vas travailler : ce que fait l'application, comment elle est construite, et ce qui a été mis en place pour développer avec Claude Code.
 
-| Fichier                      | Quand        | Contenu                                                                               |
-| ---------------------------- | ------------ | ------------------------------------------------------------------------------------- |
-| [EXERCICES.md](EXERCICES.md) | le matin     | six exercices (35 min) pour prendre en main Claude Code                               |
-| [ATELIER-B.md](ATELIER-B.md) | l'après-midi | deux fonctionnalités (2 h) à construire avec la méthode spec → plan → TDD → relecture |
+| Fichier                                            | Quand       | Contenu                                                                             |
+| -------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------- |
+| [EXERCICES.md](EXERCICES.md)                       | 09:30–10:15 | prise en main : six exercices (35 min) pour piloter Claude Code                     |
+| [ATELIER-A.md](ATELIER-A.md)                       | 10:30–11:15 | écrire le `CLAUDE.md` du projet, à partir de [CLAUDE.modele.md](CLAUDE.modele.md)   |
+| [ATELIER-B.md](ATELIER-B.md)                       | 11:15–12:15 | une petite fonctionnalité imposée (Bénévoles) avec la méthode spec → plan → TDD     |
+| [ATELIER-C.md](ATELIER-C.md)                       | 13:15–16:30 | ton application, sur le thème de ta table, avec les données de [donnees/](donnees/) |
+| [POUR-ALLER-PLUS-LOIN.md](POUR-ALLER-PLUS-LOIN.md) | après       | une fonctionnalité de plus pour s'entraîner : le programme des épreuves             |
 
 ## 1. L'application
 
@@ -63,7 +66,7 @@ Le dossier `.claude/` configure Claude Code pour ce dépôt. Tu n'as rien à ins
 
 **Des permissions.** Claude lance sans te demander les commandes de vérification (`pnpm test`, `pnpm verify`, `pnpm check`, `pnpm spec:*`, `pnpm tdd:*`). Pour tout le reste, et en particulier supprimer des fichiers ou installer des dépendances, il te demande la permission. La liste est dans `.claude/settings.json`.
 
-**Une méthode en quatre commandes (skills).** C'est le cœur de l'atelier de l'après-midi :
+**Une méthode en quatre commandes (skills).** C'est le cœur des ateliers B et C :
 
 | Commande         | Ce qu'elle produit                                                                                              | Qui valide   |
 | ---------------- | --------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -86,5 +89,9 @@ La seule commande à retenir pour toi : **`pnpm check`**, qui vérifie tout le d
 
 ## 4. Le déroulé de la journée
 
-1. **Le matin, [les exercices](EXERCICES.md)** : explorer le dépôt avec Claude, planifier sans rien modifier, confier une tâche puis relire, interrompre et revenir en arrière, gérer le contexte, refuser une permission.
-2. **L'après-midi, [l'atelier B](ATELIER-B.md)** : construire deux fonctionnalités de l'API, **Bénévoles** puis **Programme des épreuves**, avec les quatre commandes. Tu décris le besoin et tu valides ; Claude écrit le code et les tests.
+1. **09:30–10:15, [la prise en main](EXERCICES.md)** : explorer le dépôt avec Claude, planifier sans rien modifier, confier une tâche puis relire, interrompre et revenir en arrière, gérer le contexte, refuser une permission.
+2. **10:30–11:15, [l'atelier A](ATELIER-A.md)** : écrire le `CLAUDE.md` du projet (méthodologie, architecture, concepts, bonnes pratiques, nommage) et vérifier que Claude l'applique.
+3. **11:15–12:15, [l'atelier B](ATELIER-B.md)** : appliquer une fois le cycle complet, `/spec` → `/spec-plan` → `/tdd-task` → `/converge`, sur une petite fonctionnalité imposée : les bénévoles.
+4. **13:15–16:30, [l'atelier C](ATELIER-C.md)** : construire seul ton application sur le thème de ta table (résultats et médailles, guide touristique de Dakar, ou mobilité et covoiturage), avec le même cycle.
+
+Tout se fait sur une seule branche, créée au début des exercices : ton `CLAUDE.md` de l'atelier A sert donc aussi aux ateliers B et C.
