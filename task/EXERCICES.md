@@ -1,6 +1,6 @@
 # Exercices du matin : prendre en main Claude Code
 
-Six exercices, 35 minutes en tout. Ils se font dans ce dépôt, sans le cycle `/spec` de l'après-midi. Lance `claude` à la racine du dépôt, après `pnpm install`.
+Six exercices, 35 minutes en tout. Ils se font dans ce dépôt, sans le cycle `/spec` de l'après-midi. Lance `claude` à la racine du dépôt, après `pnpm install`. Pour découvrir le projet avant de commencer, lis [README.md](README.md) dans ce dossier.
 
 Avant chaque exercice : `git status` doit être propre (sinon `git stash -u`).
 
@@ -62,4 +62,4 @@ Puis de façon précise :
 
 ## Atelier B
 
-L'atelier B applique la méthode de l'après-midi (spec, plan, TDD, relecture) à une petite fonctionnalité : voir [ATELIER-B.md](ATELIER-B.md), et la section « Méthode » du [README](README.md#méthode).
+L'atelier B applique la méthode de l'après-midi (spec, plan, TDD, relecture) à deux fonctionnalités, Bénévoles puis Programme des épreuves : voir [ATELIER-B.md](ATELIER-B.md), et la section « Méthode » du [README](../README.md#méthode).
