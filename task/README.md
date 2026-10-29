@@ -94,4 +94,4 @@ La seule commande à retenir pour toi : **`pnpm check`**, qui vérifie tout le d
 3. **11:15–12:15, [l'atelier B](ATELIER-B.md)** : appliquer une fois le cycle complet, `/spec` → `/spec-plan` → `/tdd-task` → `/converge`, sur une petite fonctionnalité imposée : les bénévoles.
 4. **13:15–16:30, [l'atelier C](ATELIER-C.md)** : construire seul ton application sur le thème de ta table (résultats et médailles, guide touristique de Dakar, ou mobilité et covoiturage), avec le même cycle.
 
-Tout se fait sur une seule branche, créée au début des exercices : ton `CLAUDE.md` de l'atelier A sert donc aussi aux ateliers B et C.
+Tout se fait dans ton propre dépôt GitHub (le fork créé à la Mission 0), sur une seule branche créée au début des exercices : ton `CLAUDE.md` de l'atelier A sert donc aussi aux ateliers B et C, et tu repars avec l'ensemble.

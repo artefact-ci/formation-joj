@@ -24,7 +24,7 @@ Les bonnes pratiques d'un projet professionnel (architecture, nommage, gestion d
 4. Pour trouver le contenu, lis le module modèle `apps/api/src/modules/disciplines/` et le [README du dépôt](../README.md). Tu peux demander à Claude : « Quelles conventions de nommage suit le module disciplines ? » ; c'est toi qui décides ce qui entre dans `CLAUDE.md`.
 5. Supprime les commentaires du modèle (`<!-- … -->`) une fois la rubrique remplie : Claude les lirait à chaque session.
 6. Vérifie la taille : **60 lignes au plus**. Une règle que Claude suivrait de toute façon n'a rien à faire là.
-7. Formate, puis commite : `pnpm format`, puis `git add CLAUDE.md && git commit -m "docs: add project CLAUDE.md"`. Le pré-commit vérifie aussi le format des fichiers Markdown.
+7. Formate, puis commite : `pnpm format`, puis `git add CLAUDE.md && git commit -m "docs: add project CLAUDE.md"`, et enfin `git push`. Le pré-commit vérifie aussi le format des fichiers Markdown.
 
 Ce qu'un bon `CLAUDE.md` contient : des règles vérifiables (« un controller n'appelle qu'un cas d'usage ») plutôt que des vœux (« écrire du code propre ») ; des chemins réels ; des renvois (« la méthode est dans `specs/constitution.md` ») plutôt que des copies.
 

@@ -74,12 +74,12 @@ Ajoute la seconde règle et la consultation, avec le même cycle (spec `002`, ap
 
 ## Le corrigé
 
-La branche `corrige/atelier-b` contient la fonctionnalité Bénévoles complète (créneau, inscription, consultation, les deux règles), produite avec ce cycle : spec et plan validés, un commit par tâche, deux passages de `/converge`. Elle est publiée à 12:05 : il faut d'abord la récupérer avec `git fetch origin`. Pour la comparer à ton travail sans quitter ta branche :
+La branche `corrige/atelier-b` contient la fonctionnalité Bénévoles complète (créneau, inscription, consultation, les deux règles), produite avec ce cycle : spec et plan validés, un commit par tâche, deux passages de `/converge`. Elle est publiée à 12:05 : il faut d'abord la récupérer depuis le dépôt de la formation (`upstream`), avec `git fetch upstream`. Pour la comparer à ton travail sans quitter ta branche :
 
 ```bash
-git fetch origin
-git log --oneline origin/corrige/atelier-b
-git diff HEAD origin/corrige/atelier-b -- specs/
+git fetch upstream
+git log --oneline upstream/corrige/atelier-b
+git diff HEAD upstream/corrige/atelier-b -- specs/
 ```
 
 Les numéros de scénario ne correspondent pas forcément aux tiens. Le corrigé couvre la version complète, où `AS3` est le créneau complet et `AS4` l'email déjà inscrit ; dans ta version réduite, le créneau complet est sans doute `AS2`. Compare les scénarios par leur titre, pas par leur numéro.
@@ -88,6 +88,7 @@ Les numéros de scénario ne correspondent pas forcément aux tiens. Le corrigé
 
 - `git log --oneline` : un commit par tâche, chacun avec un message qui cite sa tâche et son scénario (par exemple `feat(volunteers): T03 refuse a full slot (001-AS2)`).
 - `pnpm spec:check specs/001-<nom> --trace` : chaque scénario pointe vers au moins un test.
+- `git push` : ton travail est sauvegardé sur ton dépôt GitHub avant la pause.
 
 ## Si ça bloque
 

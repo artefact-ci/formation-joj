@@ -21,7 +21,7 @@ Tu repars du dépôt du matin, sur ta branche de la journée, avec ton `CLAUDE.m
 - **Une page de spec au plus** (`pnpm spec:check` le vérifie) et **une ou deux règles métier**. Une spec trop ambitieuse ne tient pas en 2 heures de code : c'est l'erreur la plus fréquente.
 - **Tu pars du dépôt du matin** et tu suis le module `disciplines` comme modèle. Pas de nouvelle dépendance sans l'accord de ton coach.
 - **Une API d'abord.** Un écran seulement quand l'API de ta fonctionnalité est verte, et s'il reste du temps.
-- **Les données fournies** sont dans `task/donnees/<thème>/`. Pour les charger : quand ta table existe, copie le fichier dans `apps/api/data/` en le nommant comme ta table (`02-resultats.json` → table `resultats`), adapte les noms de colonnes si besoin, puis `pnpm db:seed` (après avoir arrêté `pnpm dev`). Les fichiers n'ont pas de colonne `created_at` : si ta table en a une obligatoire, comme le module `disciplines`, ajoute-la à chaque ligne du fichier (`"created_at": "2026-10-31T08:00:00.000Z"`) ou donne-lui une valeur par défaut dans le schéma Drizzle, sinon `db:seed` échoue. Les données sont fictives.
+- **Les données fournies** sont dans `task/donnees/<thème>/`. Pour les charger : quand ta table existe, copie le fichier dans `apps/api/data/` en le nommant comme ta table (`02-resultats.json` → table `resultats`), adapte les noms de colonnes si besoin, puis `pnpm db:seed` (après avoir arrêté `pnpm dev`). Les données sont fictives.
 - **Bloqué plus de 10 minutes** : appelle ton coach. Un problème technique (licence, réseau, installation) part chez le référent technique.
 
 ## Comment les projets sont choisis

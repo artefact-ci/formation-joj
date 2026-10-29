@@ -2,7 +2,7 @@
 
 Six exercices, 35 minutes en tout. Ils se font dans ce dépôt, sans le cycle `/spec` des ateliers B et C. Lance `claude` à la racine du dépôt, après `pnpm install`. Pour découvrir le projet avant de commencer, lis [README.md](README.md) dans ce dossier.
 
-Avant le premier exercice, crée ta branche de la journée : `git switch -c journee`. Tout ce que tu feras aujourd'hui (exercices, `CLAUDE.md`, ateliers B et C) y sera commité.
+Avant le premier exercice, dans ton dépôt (le fork créé à la Mission 0), crée ta branche de la journée et envoie-la sur GitHub : `git switch -c journee`, puis `git push -u origin journee`. Tout ce que tu feras aujourd'hui (exercices, `CLAUDE.md`, ateliers B et C) y sera commité.
 
 Avant chaque exercice : `git status` doit être propre (sinon `git stash -u`).
 
