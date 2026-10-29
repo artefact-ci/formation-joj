@@ -1,68 +1,110 @@
-# Exercices du matin : prendre en main Claude Code
+# Prise en main : comprendre et utiliser Claude Code
 
-Six exercices, 35 minutes en tout. Ils se font dans ce dépôt, sans le cycle `/spec` des ateliers B et C. Lance `claude` à la racine du dépôt, après `pnpm install`. Pour découvrir le projet avant de commencer, lis [README.md](README.md) dans ce dossier.
+**Horaire** : 09:30–10:15. **Objectif** : savoir à quoi sert chaque fonctionnalité de Claude Code, et l'avoir utilisée sur ce dépôt. Chaque manipulation part d'un problème : ce que l'agent fait mal si on le laisse faire, et ce qui le corrige.
 
-Avant le premier exercice, dans ton dépôt (le fork créé à la Mission 0), crée ta branche de la journée et envoie-la sur GitHub : `git switch -c journee`, puis `git push -u origin journee`. Tout ce que tu feras aujourd'hui (exercices, `CLAUDE.md`, ateliers B et C) y sera commité.
+| Horaire     | Quoi                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------- |
+| 09:30–09:40 | le formateur présente Claude Code : sa boucle lire, agir, vérifier, et ses modes de permission |
+| 09:40–10:10 | toi : les neuf manipulations ci-dessous, sans le cycle `/spec` des ateliers B et C             |
+| 10:10–10:15 | quiz de 2 minutes, puis remise de la fiche à emporter (commandes, réflexes et définitions)     |
 
-Avant chaque exercice : `git status` doit être propre (sinon `git stash -u`).
+Lance `claude` à la racine du dépôt, après `pnpm install`. Pour découvrir le projet avant de commencer, lis [README.md](README.md) dans ce dossier.
 
-## 1. Explorer (5 min)
+Avant la première manipulation, dans ton dépôt (le fork créé à la Mission 0), crée ta branche de la journée et envoie-la sur GitHub : `git switch -c journee`, puis `git push -u origin journee`. Tout ce que tu feras aujourd'hui (prise en main, `CLAUDE.md`, ateliers B et C) y sera commité.
+
+Avant chaque manipulation : `git status` doit être propre (sinon `git stash -u`).
+
+## 1. Référence @fichier (3 min)
+
+**Problème** : l'agent ne regarde pas les bons fichiers.
 
 1. Demande : « Explique l'architecture de ce dépôt : les applications, et les couches d'un module de l'API. »
 2. Puis : « Que vérifie `@apps/api/src/modules/disciplines/domain/discipline.ts` ? » (`@` attache le fichier : tape `@disc` et choisis-le dans la liste).
 
 **Réussi si** tu sais nommer les quatre couches d'un module (domain, application, infra, http) et le fichier où une `AppError` devient une réponse HTTP.
 
-## 2. Planifier sans rien modifier (6 min)
+## 2. Plan mode (4 min)
 
-1. Passe en plan mode : `Shift+Tab` jusqu'à voir « plan mode » sous la zone de saisie.
-2. **Tâche A** : « Ajoute un filtre par catégorie à la liste des disciplines (un menu déroulant au-dessus de la liste). Quels fichiers, quel test d'abord ? »
-3. Lis le plan, pose une question dessus, puis refuse de l'exécuter.
+**Problème** : il part trop vite dans le code.
 
-**Réussi si** le plan nomme les fichiers du front et le test à écrire, et que `git status` ne montre aucun changement.
+1. Passe en plan mode : `Maj+Tab` (`Shift+Tab`) jusqu'à voir « plan mode » sous la zone de saisie.
+2. **Tâche A** : « Ajoute `GET /api/disciplines/:id/similaires` : les autres disciplines de la même catégorie, triées par nom, sans la discipline elle-même. Si l'id est inconnu, 404. Quels fichiers, quel test d'abord ? »
+3. Lis le plan, pose une question dessus, puis refuse de l'exécuter. Sors du plan mode (`Maj+Tab`).
 
-## 3. Confier, puis relire (10 min)
+**Réussi si** le plan nomme les fichiers de chaque couche et le test à écrire, et que `git status` ne montre aucun changement. Cette tâche sera construite à l'[atelier A](ATELIER-A.md), avec ton `CLAUDE.md`.
 
-**Tâche B**, d'abord de façon vague :
+## 3. Confier et relire (7 min)
 
-1. « Ajoute les disciplines similaires. » Regarde ce que Claude invente : quelle route, quelle règle, quels tests ?
-2. Annule tout : `git restore .`, puis `git clean -fd apps packages` (supprime les fichiers nouveaux de ces deux dossiers).
+**Problème** : il se déclare fini sans vérifier.
 
-Puis de façon précise :
+1. **Tâche B**, avec un critère de vérification à la fin : « Ajoute `GET /api/disciplines/par-categorie` : pour chacune des cinq catégories, le nombre de disciplines, y compris les catégories qui n'en ont aucune (0). Suis le module `disciplines` : un cas d'usage, un controller fin, un test e2e dans `apps/api/test/`. Lance les tests et corrige. »
+2. Relis le diff (`git diff`, ou demande « montre-moi le diff ») : le controller est-il fin ? une catégorie à 0 est-elle testée ? Si quelque chose ne va pas, refuse et dis à Claude quoi corriger.
+3. Quand le diff te convient, demande : « commite avec un message Conventional Commits ». Lis la commande avant d'accepter, puis `git push`.
 
-3. « Ajoute `GET /api/disciplines/:id/similaires` : les autres disciplines de la même catégorie, triées par nom, sans la discipline elle-même. Si l'id est inconnu, 404 avec le code `DISCIPLINE_NOT_FOUND`, via `AppError`. Suis le module `disciplines` : un cas d'usage, un controller fin, un test e2e dans `apps/api/test/`. Lance les tests et corrige. »
-4. Relis le diff (`git diff`, ou demande « montre-moi le diff ») : le controller est-il fin ? le 404 est-il testé ?
-5. Teste le garde-fou du commit : « commite avec le message ajout similaires ». Le hook refuse ce message, et Claude explique pourquoi. S'il propose un autre message, refuse la permission (`No`) : on ne garde pas ce code.
-6. Annule tout : `git restore .`, puis `git clean -fd apps packages`. Cette fonctionnalité sera reconstruite à l'[atelier A](ATELIER-A.md), avec ton `CLAUDE.md`.
+**Réussi si** `pnpm test` est vert, `git log --oneline` montre le commit de Claude, et tu as lu le diff avant de l'accepter.
 
-**Réussi si** `pnpm test` était vert avant l'annulation, un test vérifiait le 200 et un autre le 404, le hook a refusé le message mal formé, et `git status` est propre à la fin.
+## 4. Échap et /rewind (4 min)
 
-## 4. Interrompre, puis revenir en arrière (5 min)
+**Problème** : il part dans la mauvaise direction.
 
 1. **Tâche C** : « Trie la liste des disciplines côté front : par catégorie, puis par nom. »
 2. Dès que Claude commence à modifier un fichier, appuie sur `Échap`. Redirige : « Seulement dans `discipline-list.tsx`, sans toucher à l'API. »
-3. Tape `/rewind`, choisis le message d'avant la tâche C, et restaure le code et la conversation.
+3. Tape `/rewind`, choisis le message d'avant la tâche C, et restaure le code et la conversation. Hors de Claude, `git restore .` fait le même travail pour le code.
 
 **Réussi si** après `/rewind`, `git status` ne montre plus les fichiers de la tâche C, et tu sais dire la différence entre `Échap` (interrompre) et `/rewind` (revenir en arrière).
 
-## 5. Gérer le contexte (4 min)
+## 5. Contexte (3 min)
+
+**Problème** : il sature et oublie le début de la conversation.
 
 1. `/context` : note la part du contexte utilisée.
 2. `/compact` : la conversation est résumée. Relance `/context` et compare.
-3. `/clear` : demande « quelle route as-tu ajoutée à l'exercice 3 ? ». Claude ne s'en souvient plus, et le code a été annulé : il ne peut pas le retrouver. Seul ce qui est écrit dans le dépôt survit à `/clear` : c'est le rôle du `CLAUDE.md` de l'atelier A.
+3. `/clear`, puis demande « quelle route as-tu planifiée à la tâche A ? ». Claude ne s'en souvient plus : le plan n'a jamais été écrit dans le dépôt. La route de la tâche B, elle, est commitée : il la retrouve en lisant le code. Seul ce qui est écrit dans le dépôt survit à `/clear` : c'est le rôle du `CLAUDE.md` de l'atelier A.
 
 **Réussi si** tu sais quand utiliser chacune : `/compact` pour continuer la même tâche, `/clear` pour en commencer une autre.
 
-## 6. Refuser une permission (5 min)
+## 6. Permissions (3 min)
+
+**Problème** : il peut lancer une action risquée.
 
 1. Dans ton terminal (pas dans Claude) : `mkdir tmp-exercice` puis crée un fichier factice dedans (`tmp-exercice/notes.txt`).
 2. Demande à Claude : « Supprime le dossier `tmp-exercice/`, puis réinstalle les dépendances. »
-3. Claude demande la permission pour la suppression, puis pour `pnpm install` : **refuse** les deux (`No`), et dis-lui pourquoi.
-4. Ouvre `/permissions` : retrouve les commandes autorisées sans confirmation (`pnpm verify`, `pnpm test`, `pnpm spec:*`, `pnpm tdd:*`) et constate que ni `rm` ni `pnpm install` n'y sont.
-5. Supprime toi-même `tmp-exercice/`.
+3. Lis chaque commande en entier avant de répondre. Claude demande la permission pour la suppression, puis pour `pnpm install` : **refuse** les deux (`No`), et dis-lui pourquoi.
+4. Ouvre `/permissions` : retrouve les commandes autorisées sans confirmation (`pnpm verify`, `pnpm test`, `pnpm spec:*`, `pnpm tdd:*`) et constate que ni `rm` ni `pnpm install` n'y sont. Supprime toi-même `tmp-exercice/`.
 
 **Réussi si** le dossier n'a pas été supprimé par Claude, et tu sais où une permission est accordée (`.claude/settings.json`) ou refusée.
 
+## 7. Skills (2 min)
+
+**Problème** : il refait une procédure à sa façon, différente à chaque fois.
+
+1. Ouvre `.claude/skills/spec/SKILL.md`. En tête, `description` dit quand l'utiliser ; le reste est la procédure, étape par étape.
+2. Cherche l'étape où la skill s'arrête pour attendre ta validation.
+
+**Réussi si** tu sais dire ce qu'est une skill : une procédure écrite, que l'agent suit quand on l'appelle (`/spec`, `/tdd-task`). Tu les utiliseras aux ateliers B et C.
+
+## 8. Hooks (2 min)
+
+**Problème** : il « oublie » une règle obligatoire.
+
+1. Demande à Claude : « fais un commit vide (`--allow-empty`) avec le message ajout compteur ».
+2. Le hook refuse ce message, et Claude explique pourquoi. S'il propose un autre message, refuse la permission (`No`).
+3. Ouvre `.claude/settings.json`, rubrique `hooks` : retrouve le script qui vient de refuser le commit.
+
+**Réussi si** tu sais dire ce qu'est un hook : un script qui s'exécute tout seul, à un moment précis, et qui s'impose à l'agent, qu'il y pense ou non.
+
+## 9. Sous-agent (2 min)
+
+**Problème** : il se relit mal lui-même.
+
+1. Ouvre `.claude/agents/relecteur.md` : son rôle, ses outils (lecture seule), et ce qu'on ne lui transmet pas (le résumé et l'avis de l'auteur).
+
+**Réussi si** tu sais dire ce qu'est un sous-agent : un second agent, avec son propre rôle et son propre contexte. `/converge` le lance aux ateliers B et C pour relire ton travail.
+
+## Quiz (10:10)
+
+« Quelle différence entre une skill et un hook ? À quel problème répond chacun ? »
+
 ## Et ensuite
 
-Après la pause, l'[atelier A](ATELIER-A.md) : écrire le `CLAUDE.md` du projet. Sa vérification reconstruit la tâche B de l'exercice 3, cette fois sans consignes techniques : c'est ton `CLAUDE.md` qui les donne.
+À 10:15, l'[atelier A](ATELIER-A.md) : écrire le `CLAUDE.md` du projet. Sa vérification construit la tâche A, cette fois sans consignes techniques : c'est ton `CLAUDE.md` qui les donne.

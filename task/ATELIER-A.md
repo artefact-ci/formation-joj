@@ -1,8 +1,23 @@
-# Atelier A : écrire le CLAUDE.md du projet
+# Atelier A : le code et son CLAUDE.md
 
-**Horaire** : 10:30–11:15 (45 min). **Objectif** : écrire noir sur blanc les bonnes pratiques du projet dans `CLAUDE.md`, puis constater que Claude les applique sans qu'on les lui répète.
+**Horaire** : 10:15–11:15 (1 h). **Objectif** : comprendre la structure du dépôt et les bonnes pratiques qui y sont appliquées, les écrire noir sur blanc dans `CLAUDE.md`, puis constater que Claude les applique sans qu'on les lui répète.
 
-`CLAUDE.md` est la mémoire permanente du projet : Claude le lit au début de chaque session. Il dit ce qui est vrai dans ce dépôt (architecture, conventions, nommage) et renvoie vers le détail. Il reste court : une ligne inutile coûte du contexte à chaque session.
+## 10:15–10:35 · Plonger dans le code (20 min)
+
+Pose ces questions à Claude, une par une, et vérifie chaque réponse dans le code qu'il cite. **Note ce que tu repères** (sur papier ou dans un fichier que tu ne commiteras pas) : ces notes rempliront ton `CLAUDE.md`. Entre parenthèses, la rubrique du modèle qu'elles alimentent.
+
+1. **La structure** : « Quel est le rôle de `apps/api`, `apps/web` et `packages/shared` ? Qu'est-ce qui a le droit d'importer quoi ? » (architecture)
+2. **Les couches de l'API NestJS** : « Suis la création d'une discipline, de la requête HTTP à la base : quels fichiers, dans quel ordre, et que fait chacun ? » (architecture, concepts appréciés)
+3. **Le nommage** : « Quelles conventions de nommage suit le module `disciplines` : fichiers, classes, cas d'usage, codes d'erreur, titres des tests ? » (nommage)
+4. **La gestion des erreurs** : « Que se passe-t-il quand on crée une discipline dont le nom existe déjà ? Où l'erreur est-elle levée, et où devient-elle un `409` ? » (bonnes pratiques)
+5. **La validation des entrées** : « Où est validé le corps d'une requête `POST /api/disciplines`, et que répond l'API s'il est invalide ? » (bonnes pratiques)
+6. **Les tests** : « Quels sont les types de tests du dépôt, où sont-ils, et que vérifie chacun ? » (méthodologie)
+
+Pour aller vite : le module modèle est dans `apps/api/src/modules/disciplines/`, et le [README du dépôt](../README.md) décrit l'ordre pour ajouter une fonctionnalité.
+
+## 10:35–10:45 · Pourquoi un CLAUDE.md (formateur)
+
+Ce qui manquait à l'agent « sans harness » de la démo d'ouverture, c'est le contexte du projet. `CLAUDE.md` est la mémoire permanente du projet : Claude le lit au début de chaque session. Il dit ce qui est vrai dans ce dépôt (architecture, conventions, nommage) et renvoie vers le détail. Il reste court : une ligne inutile coûte du contexte à chaque session.
 
 | Fichier                                 | Rôle                                                    | Quand il est lu                      |
 | --------------------------------------- | ------------------------------------------------------- | ------------------------------------ |
@@ -10,18 +25,16 @@
 | une skill (`.claude/skills/*/SKILL.md`) | comment faire une tâche, étape par étape                | seulement quand on lance la commande |
 | `specs/constitution.md`                 | les six principes de la méthode des ateliers B et C     | par les skills `/spec` à `/converge` |
 
-**Règle d'or.** `CLAUDE.md` pointe vers les skills ; une skill ne répète jamais `CLAUDE.md`, elle le lit.
+**Règle d'or.** `CLAUDE.md` pour ce qui est toujours vrai et court, une skill pour une procédure. `CLAUDE.md` pointe vers les skills ; une skill ne répète jamais `CLAUDE.md`, elle le lit.
 
-## 10:30–10:40 · Présentation (formateur)
+Le formateur présente ensuite le guide de construction : le modèle [CLAUDE.modele.md](CLAUDE.modele.md) et ses cinq rubriques.
 
-Les bonnes pratiques d'un projet professionnel (architecture, nommage, gestion des erreurs, sécurité), la différence entre `CLAUDE.md` et une skill, et la règle d'or. Rien à faire de ton côté.
-
-## 10:40–11:05 · Compléter le modèle (25 min)
+## 10:45–11:05 · Rédiger ton CLAUDE.md (20 min)
 
 1. `git status` doit être propre. Tu travailles sur la branche de la journée (voir [EXERCICES.md](EXERCICES.md)).
 2. Copie le modèle à la racine du dépôt : `cp task/CLAUDE.modele.md CLAUDE.md`.
 3. Remplis les cinq rubriques : **méthodologie**, **architecture**, **concepts appréciés**, **bonnes pratiques**, **nommage**. Chaque rubrique contient un commentaire qui explique quoi écrire, et un exemple.
-4. Pour trouver le contenu, lis le module modèle `apps/api/src/modules/disciplines/` et le [README du dépôt](../README.md). Tu peux demander à Claude : « Quelles conventions de nommage suit le module disciplines ? » ; c'est toi qui décides ce qui entre dans `CLAUDE.md`.
+4. Pars de tes notes d'exploration. Si une rubrique reste vide, demande à Claude ; c'est toi qui décides ce qui entre dans `CLAUDE.md`.
 5. Supprime les commentaires du modèle (`<!-- … -->`) une fois la rubrique remplie : Claude les lirait à chaque session.
 6. Vérifie la taille : **60 lignes au plus**. Une règle que Claude suivrait de toute façon n'a rien à faire là.
 7. Formate, puis commite : `pnpm format`, puis `git add CLAUDE.md && git commit -m "docs: add project CLAUDE.md"`, et enfin `git push`. Le pré-commit vérifie aussi le format des fichiers Markdown.
@@ -31,11 +44,11 @@ Ce qu'un bon `CLAUDE.md` contient : des règles vérifiables (« un controller n
 ## 11:05–11:15 · Vérifier que Claude l'applique (10 min)
 
 1. `/clear`, pour que Claude reparte de zéro et relise `CLAUDE.md`.
-2. Reconstruis la **tâche B** de l'exercice 3, annulée le matin. Donne seulement le besoin métier, sans aucune consigne technique (ni module modèle, ni cas d'usage, ni `AppError`, ni test) : c'est ton `CLAUDE.md` qui doit les apporter.
+2. Construis la **tâche A**, planifiée à la manipulation 2 de la [prise en main](EXERCICES.md) sans être codée. Donne seulement le besoin métier, sans aucune consigne technique (ni module modèle, ni cas d'usage, ni `AppError`, ni test) : c'est ton `CLAUDE.md` qui doit les apporter.
 
    « Ajoute `GET /api/disciplines/:id/similaires` : les autres disciplines de la même catégorie, triées par nom, sans la discipline elle-même. Si l'id est inconnu, 404. »
 
-3. Relis le diff et compare avec la version précise du matin, qui donnait toutes les consignes dans le prompt. Vérifie, pour chaque règle que ton `CLAUDE.md` écrit :
+3. Relis le diff et compare avec la tâche B du matin, dont le prompt donnait toutes les consignes techniques. Vérifie, pour chaque règle que ton `CLAUDE.md` écrit :
    - un cas d'usage dans `application/use-cases/`, avec une méthode `execute()` ;
    - un controller fin, sans règle métier ;
    - le 404 levé par une `AppError` avec le code `DISCIPLINE_NOT_FOUND` ;

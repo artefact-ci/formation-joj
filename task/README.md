@@ -4,8 +4,8 @@ Ce dossier contient les énoncés de la journée. Ce fichier décrit le projet s
 
 | Fichier                                            | Quand       | Contenu                                                                             |
 | -------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------- |
-| [EXERCICES.md](EXERCICES.md)                       | 09:30–10:15 | prise en main : six exercices (35 min) pour piloter Claude Code                     |
-| [ATELIER-A.md](ATELIER-A.md)                       | 10:30–11:15 | écrire le `CLAUDE.md` du projet, à partir de [CLAUDE.modele.md](CLAUDE.modele.md)   |
+| [EXERCICES.md](EXERCICES.md)                       | 09:30–10:15 | prise en main : neuf manipulations pour comprendre et utiliser Claude Code          |
+| [ATELIER-A.md](ATELIER-A.md)                       | 10:15–11:15 | écrire le `CLAUDE.md` du projet, à partir de [CLAUDE.modele.md](CLAUDE.modele.md)   |
 | [ATELIER-B.md](ATELIER-B.md)                       | 11:15–12:15 | une petite fonctionnalité imposée (Bénévoles) avec la méthode spec → plan → TDD     |
 | [ATELIER-C.md](ATELIER-C.md)                       | 13:15–16:30 | ton application, sur le thème de ta table, avec les données de [donnees/](donnees/) |
 | [POUR-ALLER-PLUS-LOIN.md](POUR-ALLER-PLUS-LOIN.md) | après       | une fonctionnalité de plus pour s'entraîner : le programme des épreuves             |
@@ -89,9 +89,9 @@ La seule commande à retenir pour toi : **`pnpm check`**, qui vérifie tout le d
 
 ## 4. Le déroulé de la journée
 
-1. **09:30–10:15, [la prise en main](EXERCICES.md)** : explorer le dépôt avec Claude, planifier sans rien modifier, confier une tâche puis relire, interrompre et revenir en arrière, gérer le contexte, refuser une permission.
-2. **10:30–11:15, [l'atelier A](ATELIER-A.md)** : écrire le `CLAUDE.md` du projet (méthodologie, architecture, concepts, bonnes pratiques, nommage) et vérifier que Claude l'applique.
+1. **09:30–10:15, [la prise en main](EXERCICES.md)** : chaque fonctionnalité de Claude Code par le problème qu'elle résout (@fichier, plan mode, confier et relire, Échap et `/rewind`, contexte, permissions, skills, hooks, sous-agent), avec un premier commit fait par Claude et relu.
+2. **10:15–11:15, [l'atelier A](ATELIER-A.md)** : explorer le code avec Claude, puis écrire le `CLAUDE.md` du projet (méthodologie, architecture, concepts, bonnes pratiques, nommage) et vérifier que Claude l'applique.
 3. **11:15–12:15, [l'atelier B](ATELIER-B.md)** : appliquer une fois le cycle complet, `/spec` → `/spec-plan` → `/tdd-task` → `/converge`, sur une petite fonctionnalité imposée : les bénévoles.
 4. **13:15–16:30, [l'atelier C](ATELIER-C.md)** : construire seul ton application sur le thème de ta table (résultats et médailles, guide touristique de Dakar, ou mobilité et covoiturage), avec le même cycle.
 
-Tout se fait dans ton propre dépôt GitHub (le fork créé à la Mission 0), sur une seule branche créée au début des exercices : ton `CLAUDE.md` de l'atelier A sert donc aussi aux ateliers B et C, et tu repars avec l'ensemble.
+Tout se fait dans ton propre dépôt GitHub (le fork créé à la Mission 0), sur une seule branche créée au début de la prise en main : ton `CLAUDE.md` de l'atelier A sert donc aussi aux ateliers B et C, et tu repars avec l'ensemble.
