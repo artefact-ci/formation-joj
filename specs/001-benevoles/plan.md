@@ -71,4 +71,4 @@ Chaque scénario de la spec est prouvé par au moins un test, au niveau le plus 
 - [x] T01 [001-AS2, AS4, AS5, AS6, AS8] Écrire d'abord `domain/slot.spec.ts` et `domain/registration.spec.ts` (« 001-AS2: … »), puis les schémas de `packages/shared/src/volunteers.ts`, `volunteers.errors.ts`, `slot.ts` et `registration.ts`
 - [x] T02 [001-AS1, AS2, AS3, AS6, AS7, AS8] Écrire d'abord `application/volunteers.application.spec.ts` (« 001-AS1: … »), puis le port `SlotRepository`, son fake en mémoire, `OpenSlot` et `RegisterVolunteer`
 - [x] T03 [001-AS1, AS6] Écrire d'abord `infra/drizzle-slot.repository.int.spec.ts` (« 001-AS6: … »), puis `volunteers.schema.ts`, la migration, `slot.mapper.ts` et `drizzle-slot.repository.ts`
-- [ ] T04 [001-AS1, AS2, AS3, AS4, AS5, AS6, AS7, AS8] Écrire d'abord `apps/api/test/slots.e2e.spec.ts` (« 001-AS1: … »), puis `slots.controller.ts`, `volunteers.module.ts` et son ajout à `app.module.ts`
+- [x] T04 [001-AS1, AS2, AS3, AS4, AS5, AS6, AS7, AS8] Écrire d'abord `apps/api/test/slots.e2e.spec.ts` (« 001-AS1: … »), puis `slots.controller.ts`, `volunteers.module.ts` et son ajout à `app.module.ts`
