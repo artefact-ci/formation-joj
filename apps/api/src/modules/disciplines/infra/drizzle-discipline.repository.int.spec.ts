@@ -83,4 +83,23 @@ describe('DrizzleDisciplineRepository (in-memory PGlite, migrations applied)', (
     expect(await repository.findById(discipline.id)).toBeNull();
     expect(await repository.delete(discipline.id)).toBe(false);
   });
+
+  it('lists the disciplines of one category, sorted by name', async () => {
+    const tennis = Discipline.create({
+      id: randomUUID(),
+      name: 'Tennis',
+      category: 'sports-collectifs',
+      now: new Date(),
+    });
+    const hockey = Discipline.create({
+      id: randomUUID(),
+      name: 'Hockey',
+      category: 'sports-collectifs',
+      now: new Date(),
+    });
+    await repository.insert(tennis);
+    await repository.insert(hockey);
+
+    expect(await repository.listByCategory('sports-collectifs')).toEqual([hockey, tennis]);
+  });
 });
