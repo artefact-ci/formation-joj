@@ -55,6 +55,10 @@ export class Registration {
   get registeredAt(): Date {
     return this.props.registeredAt;
   }
+
+  toProps(): RegistrationProps {
+    return { ...this.props };
+  }
 }
 
 /** Volontairement simple : une partie locale, un @, un domaine avec un point, sans espace. */
