@@ -29,20 +29,21 @@ Pour charger des données de démo (voir [Base de données](#base-de-données)) 
 
 ## Commandes
 
-| Commande           | Effet                                                                |
-| ------------------ | -------------------------------------------------------------------- |
-| `pnpm dev`         | API (port 3000) et front (port 5173) en parallèle                    |
-| `pnpm test`        | tous les tests (Vitest), sans Docker ni réseau                       |
-| `pnpm test:watch`  | les tests en continu                                                 |
-| `pnpm lint`        | oxlint                                                               |
-| `pnpm format`      | formate tout (oxfmt) ; `pnpm format:check` vérifie seulement         |
-| `pnpm typecheck`   | TypeScript sur tout le repo                                          |
-| `pnpm build`       | build de l'API (SWC) et du front (Vite)                              |
-| `pnpm check`       | tout le dépôt : format, lint, types, tous les tests, build           |
-| `pnpm verify`      | les seuls fichiers modifiés : format, lint, types, tests liés        |
-| `pnpm db:generate` | génère une migration après un changement de schéma Drizzle           |
-| `pnpm db:seed`     | applique les migrations et charge `apps/api/data/*.json`             |
-| `pnpm db:reset`    | vide la base locale, applique les migrations et recharge les données |
+| Commande            | Effet                                                                |
+| ------------------- | -------------------------------------------------------------------- |
+| `pnpm dev`          | API (port 3000) et front (port 5173) en parallèle                    |
+| `pnpm test`         | tous les tests (Vitest), sans Docker ni réseau                       |
+| `pnpm test:watch`   | les tests en continu                                                 |
+| `pnpm lint`         | oxlint                                                               |
+| `pnpm format`       | formate tout (oxfmt) ; `pnpm format:check` vérifie seulement         |
+| `pnpm typecheck`    | TypeScript sur tout le repo                                          |
+| `pnpm build`        | build de l'API (SWC) et du front (Vite)                              |
+| `pnpm check`        | tout le dépôt : format, lint, types, tous les tests, build           |
+| `pnpm verify`       | les seuls fichiers modifiés : format, lint, types, tests liés        |
+| `pnpm db:generate`  | génère une migration après un changement de schéma Drizzle           |
+| `pnpm data:extract` | lit les pages Wikipédia des Jeux et réécrit `apps/api/data/*.json`   |
+| `pnpm db:seed`      | applique les migrations et charge `apps/api/data/*.json`             |
+| `pnpm db:reset`     | vide la base locale, applique les migrations et recharge les données |
 
 ## Structure
 
@@ -103,7 +104,9 @@ Puis créer `apps/api/.env` à partir de `apps/api/.env.example` et y décomment
 
 Le code ne dépend pas du mode : un seul provider Nest fournit l'instance Drizzle (`src/core/database/`). Les tests utilisent toujours PGlite en mémoire.
 
-**Données de démo** : un fichier `apps/api/data/<table>.json` par table, qui contient un tableau de lignes dont les clés sont les noms des colonnes en base (`created_at`). Un préfixe fixe l'ordre de chargement si une table en référence une autre (`01-pays.json`, `02-athletes.json`). Relancer `db:seed` ignore les lignes déjà présentes.
+**Vrais résultats** : `pnpm data:extract` réécrit les fichiers de `apps/api/data/` depuis Wikipédia (voir `apps/api/data/SOURCE.md`), une page par seconde, et ne touche à rien en cas d'échec. Arrêter ensuite `pnpm dev`, puis lancer `pnpm db:reset` : `db:seed` ne corrige pas une ligne déjà chargée.
+
+**Données de démo** : un fichier `apps/api/data/<table>.json` par table, qui contient un tableau de lignes dont les clés sont les noms des colonnes en base (`created_at`). Un préfixe fixe l'ordre de chargement si une table en référence une autre (`01-pays.json`, `02-athletes.json`). Relancer `db:seed` ignore les lignes déjà présentes. Une base chargée avant la migration `0002_event_awards_medals` n'affiche donc aucune médaille : `pnpm db:reset` la vide et recharge les données de démo.
 
 ## Ajouter une fonctionnalité
 

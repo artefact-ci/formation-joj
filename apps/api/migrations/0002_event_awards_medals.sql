@@ -1,0 +1,1 @@
+ALTER TABLE "sport_events" ADD COLUMN "awards_medals" boolean DEFAULT false NOT NULL;

@@ -36,6 +36,11 @@ export interface WorkspacePackage {
 const OUTPUT_TAIL_LINES = 40;
 const LINTABLE = /\.(?:[cm]?[jt]sx?)$/;
 const HOOKS_DIR = '.claude/hooks/';
+/**
+ * cmd.exe refuse une commande de plus de 8 191 caractères, et les scripts de pnpm et d'oxfmt la
+ * rallongent : 7 000 caractères de chemins échouent encore sous Windows, d'où cette marge.
+ */
+const MAX_PATHS_LENGTH = 4000;
 
 export function planStopCheck(input: StopCheckInput): StopCheckPlan {
   if (input.disabled) return { run: false, reason: 'STOP_CHECK=off' };
@@ -57,16 +62,16 @@ export function checkCommands(
 ): CheckCommand[] {
   const commands: CheckCommand[] = [];
   // Sans chemin, oxfmt et oxlint vérifieraient tout le dépôt.
-  if (existing.length > 0) {
+  for (const batch of inBatches(existing)) {
     commands.push({
       label: 'format',
       command: 'pnpm',
-      args: ['exec', 'oxfmt', '--check', '--no-error-on-unmatched-pattern', ...existing],
+      args: ['exec', 'oxfmt', '--check', '--no-error-on-unmatched-pattern', ...batch],
     });
   }
   const lintable = existing.filter((file) => LINTABLE.test(file));
-  if (lintable.length > 0) {
-    commands.push({ label: 'lint', command: 'pnpm', args: ['exec', 'oxlint', ...lintable] });
+  for (const batch of inBatches(lintable)) {
+    commands.push({ label: 'lint', command: 'pnpm', args: ['exec', 'oxlint', ...batch] });
   }
 
   // `...@joj/shared` : le package et ceux qui en dépendent (un changement de shared peut casser
@@ -87,6 +92,23 @@ export function checkCommands(
     });
   }
   return commands;
+}
+
+/** Découpe les chemins pour que chaque commande tienne dans la limite de Windows. */
+function inBatches(files: string[]): string[][] {
+  const batches: string[][] = [];
+  let length = 0;
+  for (const file of files) {
+    const current = batches.at(-1);
+    if (current === undefined || length + file.length + 1 > MAX_PATHS_LENGTH) {
+      batches.push([file]);
+      length = file.length + 1;
+    } else {
+      current.push(file);
+      length += file.length + 1;
+    }
+  }
+  return batches;
 }
 
 export function failureReport(failures: CheckFailure[]): string {

@@ -1,0 +1,1361 @@
+[
+  {
+    "id": "2540d8e0-545f-5d10-a6a2-2d215012a646",
+    "sport": "basketball-3x3",
+    "name": "Hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "8937bd21-6c11-5af6-a343-65722de899f9",
+    "sport": "basketball-3x3",
+    "name": "Femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "f3a0928f-73e1-55a2-a53e-0fe981e5fc50",
+    "sport": "tir-a-l-arc",
+    "name": "Individuel hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "8bba1c4e-602f-5dd6-ad94-c6a7faf518f6",
+    "sport": "tir-a-l-arc",
+    "name": "Individuel femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "9bbfe77f-4d27-5122-a56c-11d04a327855",
+    "sport": "tir-a-l-arc",
+    "name": "Équipe mixte",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "9cfe63d9-5eb3-5b12-a6f3-ccd64bb45aad",
+    "sport": "gymnastique-artistique",
+    "name": "Concours par équipes hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "2ef74955-a7a5-599a-ac20-caa959200c6c",
+    "sport": "gymnastique-artistique",
+    "name": "Concours général hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "dba56988-3d0e-518c-abab-e49f4e210dcf",
+    "sport": "gymnastique-artistique",
+    "name": "Concours par équipes femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "bb374cc0-b493-5ff2-adaa-2430b89ab808",
+    "sport": "gymnastique-artistique",
+    "name": "Concours général femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "97915279-5aee-5ddc-a67a-bbff0e230536",
+    "sport": "gymnastique-artistique",
+    "name": "Équipe mixte",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-11T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "09e4a442-5c81-5a5a-af44-0379f6ae29b4",
+    "sport": "athletisme",
+    "name": "100 m hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "c9e9d233-9800-5ce0-aa03-8c9b7ff138aa",
+    "sport": "athletisme",
+    "name": "200 m hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "28465bcb-e0db-5dd2-a6d3-67572351f4ac",
+    "sport": "athletisme",
+    "name": "400 m hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "ef0f7c3b-1457-5752-ab3a-d2c75a4373ff",
+    "sport": "athletisme",
+    "name": "800 m hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "b09860af-f259-5289-a3a3-a93196499a6b",
+    "sport": "athletisme",
+    "name": "1500 m hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "c47598be-bad9-5b29-a25c-4a859777be58",
+    "sport": "athletisme",
+    "name": "3000 m hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "269b9bfe-a8cd-5a7d-a40d-ed41ff7d6984",
+    "sport": "athletisme",
+    "name": "110 m haies hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "9a51b6bf-eac3-50ae-a3ac-c2df5394dd14",
+    "sport": "athletisme",
+    "name": "400 m haies hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "cf5b8f9d-ee1b-5886-ac7c-d62e039e8fb4",
+    "sport": "athletisme",
+    "name": "2000 m steeple hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "f9d3dc2a-d29f-50f8-aaab-9c548fe3f219",
+    "sport": "athletisme",
+    "name": "5000 m marche hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "c3dcc1c6-c1b7-5865-a533-ef580f6d3690",
+    "sport": "athletisme",
+    "name": "Saut en hauteur hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "95abe5a7-08b7-5631-adfb-cd0afea56c5a",
+    "sport": "athletisme",
+    "name": "Saut à la perche hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "4ae19586-74af-5c55-ab59-d1902c0f71ed",
+    "sport": "athletisme",
+    "name": "Saut en longueur hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "d94d267f-183f-56f0-ab33-7c17752d476c",
+    "sport": "athletisme",
+    "name": "Triple saut hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "73ffdd7e-f0c5-59b7-ad78-29e98830542c",
+    "sport": "athletisme",
+    "name": "Lancer du poids hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "b5093f3b-5e46-5403-abb7-30fd7a6961e9",
+    "sport": "athletisme",
+    "name": "Lancer du disque hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "919eebd5-b4fd-5f17-aa4c-d3b31d5d3780",
+    "sport": "athletisme",
+    "name": "Lancer du marteau hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "748179e9-de0f-511e-aa22-41e5849e173e",
+    "sport": "athletisme",
+    "name": "Lancer du javelot hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "f7a6dc2c-8ef6-5246-a537-6d21673609e2",
+    "sport": "athletisme",
+    "name": "100 m femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "90b6518b-98c4-5f7b-a09d-9b2b505d0f31",
+    "sport": "athletisme",
+    "name": "200 m femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "98dfde05-0d68-54ef-ae42-5f8376afa1d1",
+    "sport": "athletisme",
+    "name": "400 m femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "17a7b291-1a69-544c-abc1-32cdc04bd159",
+    "sport": "athletisme",
+    "name": "800 m femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T17:10:00.000Z",
+    "has_start_time": true
+  },
+  {
+    "id": "6a729c00-38be-5494-aca9-477f27a60739",
+    "sport": "athletisme",
+    "name": "1500 m femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "1733f78f-9cae-53d9-aeb3-85095bc16725",
+    "sport": "athletisme",
+    "name": "3000 m femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "22ae4832-ee1f-5c4b-a3cc-b414632487f7",
+    "sport": "athletisme",
+    "name": "100 m haies femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "5c8ae85c-23c5-5777-ab01-ad76bd5cc40b",
+    "sport": "athletisme",
+    "name": "400 m haies femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "c00c383f-679a-5c57-a656-a1994bca5cd5",
+    "sport": "athletisme",
+    "name": "2000 m steeple femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "7d4c6d89-4e6f-531e-a16f-b85ffe2c4abd",
+    "sport": "athletisme",
+    "name": "5000 m marche femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "3e60889c-5494-563b-adb1-2e3cef05821e",
+    "sport": "athletisme",
+    "name": "Saut en hauteur femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "5b10ec14-59d0-5a20-ac73-11ba70e553e3",
+    "sport": "athletisme",
+    "name": "Saut à la perche femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "f79e9ba2-8f41-5a3e-a514-bd8158fc3c65",
+    "sport": "athletisme",
+    "name": "Saut en longueur femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "8175da3a-0ab8-56e5-abbb-48c128273b90",
+    "sport": "athletisme",
+    "name": "Triple saut femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "48bee98b-f93d-51d5-a8d9-c34de22489e1",
+    "sport": "athletisme",
+    "name": "Lancer du poids femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "34266b55-8614-5d67-a8f5-f713036c8cb8",
+    "sport": "athletisme",
+    "name": "Lancer du disque femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "591ad7b1-81f9-51d6-abf4-8219c9f5e3d8",
+    "sport": "athletisme",
+    "name": "Lancer du marteau femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-10T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "ac32526a-174e-5f5a-a2a3-24a9b73cd9b7",
+    "sport": "athletisme",
+    "name": "Lancer du javelot femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-09T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "064b41e1-b342-5578-a954-bea0318aa19e",
+    "sport": "badminton",
+    "name": "Simple hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-05T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "3223e944-99ac-5be2-a183-10234ea55642",
+    "sport": "badminton",
+    "name": "Simple femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "7acba122-d9b9-52f8-ad2c-7fd776036cdb",
+    "sport": "baseball5",
+    "name": "Épreuve mixte",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "aec1f3e3-0c44-5c5f-a464-18568cf1bbf8",
+    "sport": "beach-handball",
+    "name": "Hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-13T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "7a35e4fe-cddd-5593-aca8-25b537d6d5bd",
+    "sport": "beach-handball",
+    "name": "Femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-13T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "e6751a1f-ceda-55d6-aba3-1872b0ea1ad5",
+    "sport": "beach-volley",
+    "name": "Hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "52eaa259-0bf2-510c-ac68-3e6aa18ea2ef",
+    "sport": "beach-volley",
+    "name": "Femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "4d36817a-184a-5e03-a478-153cdec17372",
+    "sport": "lutte-de-plage",
+    "name": "60 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-07T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "1eb50212-03bb-52db-a7b8-ce769da1650c",
+    "sport": "lutte-de-plage",
+    "name": "70 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "1ded8720-eaa5-5711-a8c9-e6d90a8bfaf1",
+    "sport": "lutte-de-plage",
+    "name": "80 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-07T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "2dbe596b-ddb3-511b-a62e-9b9c8028c8ce",
+    "sport": "lutte-de-plage",
+    "name": "90 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "f15e47b5-cede-5bf2-a25b-87d4412e17b1",
+    "sport": "lutte-de-plage",
+    "name": "45 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "ba305177-825c-53a5-afad-f11e579f2b48",
+    "sport": "lutte-de-plage",
+    "name": "55 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-07T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "1cfee91e-7032-59fc-ad0b-2d4fb03572d5",
+    "sport": "lutte-de-plage",
+    "name": "65 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "5ee32d2d-f1fa-5406-a91c-e88fe3ce3604",
+    "sport": "lutte-de-plage",
+    "name": "75 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "71e5ea91-29b6-5549-a212-6826a3a6f073",
+    "sport": "boxe",
+    "name": "50 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "de4e4928-2e4f-51a3-adf9-0ff20d305394",
+    "sport": "boxe",
+    "name": "55 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "ed2d41a5-cbde-54a6-a2d2-8981adf9fc6e",
+    "sport": "boxe",
+    "name": "60 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "a69f34a5-eaad-5757-a7ca-934b082de026",
+    "sport": "boxe",
+    "name": "65 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "ab126e78-00ac-5942-ab84-0816944fc910",
+    "sport": "boxe",
+    "name": "70 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "c200db66-1634-5ff9-a95e-5fa7af106ff5",
+    "sport": "boxe",
+    "name": "−48 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "87ce5686-a74e-5dc8-a780-3f40d65db1f9",
+    "sport": "boxe",
+    "name": "51 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "362267af-862c-58f7-a80a-2dc3bd519b96",
+    "sport": "boxe",
+    "name": "54 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "90d4d2ae-3fe4-5d16-a47a-a0af99ef42e9",
+    "sport": "boxe",
+    "name": "57 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "ed1fb2f7-7794-5f6d-ae30-3284d013d9a7",
+    "sport": "boxe",
+    "name": "60 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "ea1a2a53-316e-5039-afb3-352c6a867879",
+    "sport": "breaking",
+    "name": "B-Boys",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "138cb5b8-1318-5122-a33c-4ace0afa64b8",
+    "sport": "breaking",
+    "name": "B-Girls",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "89804f3b-c66b-57a9-abd2-d6ed1041e69e",
+    "sport": "aviron-de-mer",
+    "name": "Solo hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "d2b4c919-7806-5ad9-a43c-7905a87b04f1",
+    "sport": "aviron-de-mer",
+    "name": "Solo femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "78ce339c-97d9-594e-a799-1b059802e9ff",
+    "sport": "aviron-de-mer",
+    "name": "Deux de couple mixte",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-02T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "af1c7c4a-1fea-526b-a268-da6925ef3b0c",
+    "sport": "sports-equestres",
+    "name": "Saut d'obstacles individuel",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-06T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "dfa2ac25-941f-5567-a91e-091f22a94aa0",
+    "sport": "escrime",
+    "name": "Épée hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "ac64d830-2ba9-5f52-a670-b5271b361f12",
+    "sport": "escrime",
+    "name": "Fleuret hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "7e127311-96f1-54d3-a745-f5b04535f8ab",
+    "sport": "escrime",
+    "name": "Sabre hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "d2413e78-d56a-5082-ae94-3ba76638b381",
+    "sport": "escrime",
+    "name": "Épée femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "ce17778f-a668-5245-a183-3b93218cdaf3",
+    "sport": "escrime",
+    "name": "Fleuret femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "4b2c5a1a-042c-56bc-a963-815c8043a8a2",
+    "sport": "escrime",
+    "name": "Sabre femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "e8ffe217-4c78-579c-a049-717a46907943",
+    "sport": "futsal",
+    "name": "Hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-12T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "168a4033-4883-5c06-ae75-1df875f3498a",
+    "sport": "futsal",
+    "name": "Femmes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-11T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "9da43221-a272-52d7-accd-881485346e9e",
+    "sport": "judo",
+    "name": "55 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "a2b5927f-78cb-54d4-a3d5-0c7f0069c667",
+    "sport": "judo",
+    "name": "66 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "77c555ce-3715-59f7-a60c-5c31d097d7c7",
+    "sport": "judo",
+    "name": "81 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "a3470e2c-bed1-571f-ac0b-16049184af3d",
+    "sport": "judo",
+    "name": "100 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "b086bc5e-c3e3-5a84-a89d-29d15690955c",
+    "sport": "judo",
+    "name": "44 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "bf494ebc-ad17-582d-adff-92e828421ea3",
+    "sport": "judo",
+    "name": "52 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "f6b7c6dc-2a8d-51ba-a3cb-c5f8ca81d76b",
+    "sport": "judo",
+    "name": "63 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "0b915089-067e-563f-abff-ea2aac2220e6",
+    "sport": "judo",
+    "name": "78 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "be9e6c64-5981-5f07-afc3-951a2dea31a8",
+    "sport": "cyclisme-sur-route",
+    "name": "Course en ligne hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "05ece349-b74b-5532-a3ec-54a373c59215",
+    "sport": "cyclisme-sur-route",
+    "name": "Contre-la-montre hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "37538b9f-e188-5d45-a67a-837d6fb6ee33",
+    "sport": "cyclisme-sur-route",
+    "name": "Course en ligne femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "37792f17-a1ea-5839-a439-8d301c7a6f51",
+    "sport": "cyclisme-sur-route",
+    "name": "Contre-la-montre femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "9a39ea6b-e424-5326-a552-d34fe9dc286d",
+    "sport": "rugby-a-7",
+    "name": "Hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-02T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "64e50a69-6bd8-5ea5-a1da-5b0cb6a07ca9",
+    "sport": "rugby-a-7",
+    "name": "Femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "25f79599-4320-58af-afc9-6b1761b97f09",
+    "sport": "voile",
+    "name": "Techno 293+ hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "a956f15f-05fa-5296-a93d-65b336676e18",
+    "sport": "voile",
+    "name": "Techno 293+ femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "d46a34c2-86fc-57e9-a4aa-eaa66792e74f",
+    "sport": "skateboard",
+    "name": "Street hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "278019e5-a1a9-5b85-a225-e7e62cccbaa2",
+    "sport": "skateboard",
+    "name": "Street femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-05T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "37ff37d7-8a45-562d-ab1b-67dc96e8b72d",
+    "sport": "natation",
+    "name": "50 m nage libre hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-04T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "07d7629b-cf3a-5f4d-ab2b-25f18ee954c4",
+    "sport": "natation",
+    "name": "100 m nage libre hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-02T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "fcd4fca0-4be1-55c2-a49b-56cf6ce48f7b",
+    "sport": "natation",
+    "name": "200 m nage libre hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-06T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "ce118239-952a-51b6-ab49-704236ff852c",
+    "sport": "natation",
+    "name": "400 m nage libre hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "a59e4438-cd1b-594c-a139-ee491469dbe7",
+    "sport": "natation",
+    "name": "50 m dos hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-05T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "ed429450-df09-586a-addd-213ff67b4b45",
+    "sport": "natation",
+    "name": "100 m dos hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "eda5c3fc-5518-5fea-ae5d-a7d1a1a3043b",
+    "sport": "natation",
+    "name": "200 m dos hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "3524a2c3-5290-5bc3-a503-dcdeb4ee8e0f",
+    "sport": "natation",
+    "name": "50 m brasse hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-05T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "6aca2144-3fce-5fa2-a3c9-fb5f0bc0871d",
+    "sport": "natation",
+    "name": "100 m brasse hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "f8689745-cc66-5eda-ab3a-7d1e087aa487",
+    "sport": "natation",
+    "name": "200 m brasse hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-02T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "d49df194-c2a0-58cf-a910-6cad71d1e806",
+    "sport": "natation",
+    "name": "50 m papillon hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-04T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "fe77d990-483b-596d-a6dc-9ddefe47314a",
+    "sport": "natation",
+    "name": "100 m papillon hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "263f3eb2-f2c7-591f-af0a-e1de8f4e6626",
+    "sport": "natation",
+    "name": "200 m papillon hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-06T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "19463a86-6069-529a-ad3f-e76d26759ffa",
+    "sport": "natation",
+    "name": "200 m 4 nages hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-04T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "bee24b4d-7f98-5dba-a231-fccb22570fc4",
+    "sport": "natation",
+    "name": "50 m nage libre femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-04T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "b9704714-b20f-5f28-a5fe-b79a715abf71",
+    "sport": "natation",
+    "name": "100 m nage libre femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-02T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "c5bb48fb-0c78-52a5-ac03-6c015031022c",
+    "sport": "natation",
+    "name": "200 m nage libre femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-06T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "2a2e0095-94ce-5787-a12e-00b53f2b4878",
+    "sport": "natation",
+    "name": "400 m nage libre femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "fb8d068a-b75b-5529-ab88-029e49e6b7e1",
+    "sport": "natation",
+    "name": "50 m dos femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-05T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "faeae23b-0a7a-5cd3-ae10-967577adf2fc",
+    "sport": "natation",
+    "name": "100 m dos femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "a128296e-4362-5e4e-a70b-2dbad66143c0",
+    "sport": "natation",
+    "name": "200 m dos femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "f69f7201-8f4e-5024-a480-36c6b48caeaf",
+    "sport": "natation",
+    "name": "50 m brasse femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-05T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "41cfaa59-a412-5ef4-aba1-854404472d04",
+    "sport": "natation",
+    "name": "100 m brasse femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "8f79baec-d09a-5338-ada6-2d5b71ffa968",
+    "sport": "natation",
+    "name": "200 m brasse femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-02T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "d4f73cf8-ba6a-52ef-a4f0-ba0b097a20c2",
+    "sport": "natation",
+    "name": "50 m papillon femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-04T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "6e0bbd58-4545-57ca-a68e-378e7b1a789d",
+    "sport": "natation",
+    "name": "100 m papillon femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-01T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "32803f2a-f924-5993-a806-0bb45cc48bf0",
+    "sport": "natation",
+    "name": "200 m papillon femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-06T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "559812f0-eaf0-50fd-a080-e9c05ec4a935",
+    "sport": "natation",
+    "name": "200 m 4 nages femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-04T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "8fff8817-dbe0-56fe-a6e7-58c7f1b53f39",
+    "sport": "tennis-de-table",
+    "name": "Simple hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "e3d73236-07fa-5b0c-add2-dca7435f5368",
+    "sport": "tennis-de-table",
+    "name": "Simple femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "836d364e-4a7c-58d3-a791-a2ea74e17916",
+    "sport": "tennis-de-table",
+    "name": "Double mixte",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "31f8edc6-15a8-53f8-a1be-6d995bd05447",
+    "sport": "taekwondo",
+    "name": "−48 kg hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "acde1b78-6497-52ff-a335-e73c34f5812f",
+    "sport": "taekwondo",
+    "name": "−55 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "3135762b-04f4-5c85-a78d-bb3fbb469fd2",
+    "sport": "taekwondo",
+    "name": "−63 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "79a90779-3b40-5afc-a6d3-a28a8e15e686",
+    "sport": "taekwondo",
+    "name": "−73 kg hommes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "91dcc95c-2a3e-5cac-a2e9-357cfd6d3ff1",
+    "sport": "taekwondo",
+    "name": "+73 kg hommes",
+    "status": "scheduled",
+    "awards_medals": true,
+    "starts_at": "2026-11-11T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "370959f1-d17e-5855-abb7-1711e32867ce",
+    "sport": "taekwondo",
+    "name": "−44 kg femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-08T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "67f903ec-4fa3-5781-af64-3546ea112c0d",
+    "sport": "taekwondo",
+    "name": "−49 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "630c45fc-3b60-5f2c-aece-1a355e55f58a",
+    "sport": "taekwondo",
+    "name": "−55 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "cf89e617-43ce-5ad6-ae34-0f96e94a1d2f",
+    "sport": "taekwondo",
+    "name": "−63 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "52acf0d1-2a96-5df9-a004-2a752858251f",
+    "sport": "taekwondo",
+    "name": "+63 kg femmes",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "b9aef4ca-0d56-5c87-a01e-6ed276be6750",
+    "sport": "taekwondo",
+    "name": "Équipe mixte",
+    "status": "unpublished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "94eb622f-cb2b-5be5-a0bd-8a056d4458b9",
+    "sport": "triathlon",
+    "name": "Hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "8e069e42-742b-50dc-a98c-bdb5a507b602",
+    "sport": "triathlon",
+    "name": "Femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": null,
+    "has_start_time": false
+  },
+  {
+    "id": "7b46bb5d-13c9-5791-a676-bd3be40a2b85",
+    "sport": "wushu-taolu",
+    "name": "Changquan combiné hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "ba6bd6a3-289b-5ac3-ade5-c6e9a818003d",
+    "sport": "wushu-taolu",
+    "name": "Taijiquan combiné hommes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "21e52525-23a8-5f7e-a4b6-129d6133723a",
+    "sport": "wushu-taolu",
+    "name": "Changquan combiné femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  },
+  {
+    "id": "d5d863fc-6d3a-55e6-a310-73de9a33a800",
+    "sport": "wushu-taolu",
+    "name": "Taijiquan combiné femmes",
+    "status": "finished",
+    "awards_medals": true,
+    "starts_at": "2026-11-03T00:00:00.000Z",
+    "has_start_time": false
+  }
+]

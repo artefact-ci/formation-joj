@@ -1,0 +1,1642 @@
+[
+  {
+    "code": "ad",
+    "name": "Andorre",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ae",
+    "name": "Émirats arabes unis",
+    "continent": "asie",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "af",
+    "name": "Afghanistan",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ag",
+    "name": "Antigua-et-Barbuda",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "al",
+    "name": "Albanie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "am",
+    "name": "Arménie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ao",
+    "name": "Angola",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ar",
+    "name": "Argentine",
+    "continent": "ameriques",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 4
+  },
+  {
+    "code": "as",
+    "name": "Samoa américaines",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "at",
+    "name": "Autriche",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 2
+  },
+  {
+    "code": "au",
+    "name": "Australie",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 2,
+    "announced_bronze": 2
+  },
+  {
+    "code": "aw",
+    "name": "Aruba",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "az",
+    "name": "Azerbaïdjan",
+    "continent": "europe",
+    "announced_gold": 3,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ba",
+    "name": "Bosnie-Herzégovine",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bb",
+    "name": "Barbade",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bd",
+    "name": "Bangladesh",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "be",
+    "name": "Belgique",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "bf",
+    "name": "Burkina Faso",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "bg",
+    "name": "Bulgarie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "bh",
+    "name": "Bahreïn",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bi",
+    "name": "Burundi",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "bj",
+    "name": "Bénin",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bm",
+    "name": "Bermudes",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bn",
+    "name": "Brunei",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bo",
+    "name": "Bolivie",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "br",
+    "name": "Brésil",
+    "continent": "ameriques",
+    "announced_gold": 1,
+    "announced_silver": 2,
+    "announced_bronze": 1
+  },
+  {
+    "code": "bs",
+    "name": "Bahamas",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bt",
+    "name": "Bhoutan",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "bw",
+    "name": "Botswana",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "by",
+    "name": "Biélorussie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "bz",
+    "name": "Belize",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ca",
+    "name": "Canada",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "cd",
+    "name": "RD Congo",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "cf",
+    "name": "République centrafricaine",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cg",
+    "name": "Congo",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ch",
+    "name": "Suisse",
+    "continent": "europe",
+    "announced_gold": 2,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "ci",
+    "name": "Côte d'Ivoire",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ck",
+    "name": "Îles Cook",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cl",
+    "name": "Chili",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cm",
+    "name": "Cameroun",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cn",
+    "name": "Chine",
+    "continent": "asie",
+    "announced_gold": 11,
+    "announced_silver": 4,
+    "announced_bronze": 2
+  },
+  {
+    "code": "co",
+    "name": "Colombie",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 2
+  },
+  {
+    "code": "cr",
+    "name": "Costa Rica",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cu",
+    "name": "Cuba",
+    "continent": "ameriques",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cv",
+    "name": "Cap-Vert",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "cy",
+    "name": "Chypre",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "cz",
+    "name": "République tchèque",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "de",
+    "name": "Allemagne",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 2,
+    "announced_bronze": 1
+  },
+  {
+    "code": "dj",
+    "name": "Djibouti",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "dk",
+    "name": "Danemark",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "dm",
+    "name": "Dominique",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "do",
+    "name": "République dominicaine",
+    "continent": "ameriques",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "dz",
+    "name": "Algérie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ec",
+    "name": "Équateur",
+    "continent": "ameriques",
+    "announced_gold": 2,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ee",
+    "name": "Estonie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "eg",
+    "name": "Égypte",
+    "continent": "afrique",
+    "announced_gold": 5,
+    "announced_silver": 1,
+    "announced_bronze": 2
+  },
+  {
+    "code": "er",
+    "name": "Érythrée",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "es",
+    "name": "Espagne",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 2,
+    "announced_bronze": 1
+  },
+  {
+    "code": "et",
+    "name": "Éthiopie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 2,
+    "announced_bronze": 0
+  },
+  {
+    "code": "fi",
+    "name": "Finlande",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "fj",
+    "name": "Fidji",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "fm",
+    "name": "Micronésie",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "fr",
+    "name": "France",
+    "continent": "europe",
+    "announced_gold": 3,
+    "announced_silver": 3,
+    "announced_bronze": 2
+  },
+  {
+    "code": "ga",
+    "name": "Gabon",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gb",
+    "name": "Grande-Bretagne",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gd",
+    "name": "Grenade",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ge",
+    "name": "Géorgie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 2,
+    "announced_bronze": 1
+  },
+  {
+    "code": "gh",
+    "name": "Ghana",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gm",
+    "name": "Gambie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gn",
+    "name": "Guinée",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gq",
+    "name": "Guinée équatoriale",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gr",
+    "name": "Grèce",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 2,
+    "announced_bronze": 1
+  },
+  {
+    "code": "gt",
+    "name": "Guatemala",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gu",
+    "name": "Guam",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gw",
+    "name": "Guinée-Bissau",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "gy",
+    "name": "Guyana",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "hk",
+    "name": "Hong Kong",
+    "continent": "asie",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 3
+  },
+  {
+    "code": "hn",
+    "name": "Honduras",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "hr",
+    "name": "Croatie",
+    "continent": "europe",
+    "announced_gold": 3,
+    "announced_silver": 3,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ht",
+    "name": "Haïti",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "hu",
+    "name": "Hongrie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 3,
+    "announced_bronze": 1
+  },
+  {
+    "code": "id",
+    "name": "Indonésie",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 2
+  },
+  {
+    "code": "ie",
+    "name": "Irlande",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "il",
+    "name": "Israël",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "in",
+    "name": "Inde",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 3,
+    "announced_bronze": 5
+  },
+  {
+    "code": "iq",
+    "name": "Irak",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ir",
+    "name": "Iran",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 3,
+    "announced_bronze": 2
+  },
+  {
+    "code": "is",
+    "name": "Islande",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "it",
+    "name": "Italie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 2
+  },
+  {
+    "code": "jm",
+    "name": "Jamaïque",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "jo",
+    "name": "Jordanie",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "jp",
+    "name": "Japon",
+    "continent": "asie",
+    "announced_gold": 9,
+    "announced_silver": 3,
+    "announced_bronze": 4
+  },
+  {
+    "code": "ke",
+    "name": "Kenya",
+    "continent": "afrique",
+    "announced_gold": 3,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "kg",
+    "name": "Kirghizistan",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "kh",
+    "name": "Cambodge",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ki",
+    "name": "Kiribati",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "km",
+    "name": "Comores",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "kn",
+    "name": "Saint-Christophe-et-Niévès",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "kr",
+    "name": "Corée du Sud",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 2,
+    "announced_bronze": 2
+  },
+  {
+    "code": "kw",
+    "name": "Koweït",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ky",
+    "name": "Îles Caïmans",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "kz",
+    "name": "Kazakhstan",
+    "continent": "asie",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "la",
+    "name": "Laos",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "lb",
+    "name": "Liban",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "lc",
+    "name": "Sainte-Lucie",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "li",
+    "name": "Liechtenstein",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "lk",
+    "name": "Sri Lanka",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "lr",
+    "name": "Liberia",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ls",
+    "name": "Lesotho",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "lt",
+    "name": "Lituanie",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "lu",
+    "name": "Luxembourg",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "lv",
+    "name": "Lettonie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ly",
+    "name": "Libye",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ma",
+    "name": "Maroc",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "mc",
+    "name": "Monaco",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "md",
+    "name": "Moldavie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "me",
+    "name": "Monténégro",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mg",
+    "name": "Madagascar",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "mh",
+    "name": "Îles Marshall",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mk",
+    "name": "Macédoine du Nord",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ml",
+    "name": "Mali",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mm",
+    "name": "Birmanie",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mn",
+    "name": "Mongolie",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "mr",
+    "name": "Mauritanie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mt",
+    "name": "Malte",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mu",
+    "name": "Maurice",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mv",
+    "name": "Maldives",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mw",
+    "name": "Malawi",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mx",
+    "name": "Mexique",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 5
+  },
+  {
+    "code": "my",
+    "name": "Malaisie",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "mz",
+    "name": "Mozambique",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "na",
+    "name": "Namibie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ne",
+    "name": "Niger",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ng",
+    "name": "Nigeria",
+    "continent": "afrique",
+    "announced_gold": 2,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ni",
+    "name": "Nicaragua",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "nl",
+    "name": "Pays-Bas",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "no",
+    "name": "Norvège",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "np",
+    "name": "Népal",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "nr",
+    "name": "Nauru",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "nz",
+    "name": "Nouvelle-Zélande",
+    "continent": "oceanie",
+    "announced_gold": 2,
+    "announced_silver": 3,
+    "announced_bronze": 0
+  },
+  {
+    "code": "om",
+    "name": "Oman",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "pa",
+    "name": "Panama",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "pe",
+    "name": "Pérou",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "pg",
+    "name": "Papouasie-Nouvelle-Guinée",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ph",
+    "name": "Philippines",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "pk",
+    "name": "Pakistan",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "pl",
+    "name": "Pologne",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "pr",
+    "name": "Porto Rico",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ps",
+    "name": "Palestine",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "pt",
+    "name": "Portugal",
+    "continent": "europe",
+    "announced_gold": 2,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "pw",
+    "name": "Palaos",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "py",
+    "name": "Paraguay",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "qa",
+    "name": "Qatar",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "ro",
+    "name": "Roumanie",
+    "continent": "europe",
+    "announced_gold": 2,
+    "announced_silver": 2,
+    "announced_bronze": 0
+  },
+  {
+    "code": "rs",
+    "name": "Serbie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 2,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ru",
+    "name": "Russie",
+    "continent": "europe",
+    "announced_gold": 6,
+    "announced_silver": 4,
+    "announced_bronze": 0
+  },
+  {
+    "code": "rw",
+    "name": "Rwanda",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sa",
+    "name": "Arabie saoudite",
+    "continent": "asie",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sb",
+    "name": "Îles Salomon",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sc",
+    "name": "Seychelles",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sd",
+    "name": "Soudan",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "se",
+    "name": "Suède",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sg",
+    "name": "Singapour",
+    "continent": "asie",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "si",
+    "name": "Slovénie",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sk",
+    "name": "Slovaquie",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 3
+  },
+  {
+    "code": "sl",
+    "name": "Sierra Leone",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sm",
+    "name": "Saint-Marin",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sn",
+    "name": "Sénégal",
+    "continent": "afrique",
+    "announced_gold": 3,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "so",
+    "name": "Somalie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sr",
+    "name": "Suriname",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ss",
+    "name": "Soudan du Sud",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "st",
+    "name": "Sao Tomé-et-Principe",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sv",
+    "name": "Salvador",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sy",
+    "name": "Syrie",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "sz",
+    "name": "Eswatini",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "td",
+    "name": "Tchad",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tg",
+    "name": "Togo",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "th",
+    "name": "Thaïlande",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tj",
+    "name": "Tadjikistan",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tl",
+    "name": "Timor oriental",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tn",
+    "name": "Tunisie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "to",
+    "name": "Tonga",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tr",
+    "name": "Turquie",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 2
+  },
+  {
+    "code": "tt",
+    "name": "Trinité-et-Tobago",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tv",
+    "name": "Tuvalu",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "tw",
+    "name": "Taipei chinois",
+    "continent": "asie",
+    "announced_gold": 1,
+    "announced_silver": 3,
+    "announced_bronze": 3
+  },
+  {
+    "code": "tz",
+    "name": "Tanzanie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ua",
+    "name": "Ukraine",
+    "continent": "europe",
+    "announced_gold": 1,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "ug",
+    "name": "Ouganda",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "us",
+    "name": "États-Unis",
+    "continent": "ameriques",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "uy",
+    "name": "Uruguay",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "uz",
+    "name": "Ouzbékistan",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "vc",
+    "name": "Saint-Vincent-et-les-Grenadines",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ve",
+    "name": "Venezuela",
+    "continent": "ameriques",
+    "announced_gold": 1,
+    "announced_silver": 1,
+    "announced_bronze": 1
+  },
+  {
+    "code": "vg",
+    "name": "Îles Vierges britanniques",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "vi",
+    "name": "Îles Vierges américaines",
+    "continent": "ameriques",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "vn",
+    "name": "Viêt Nam",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 2,
+    "announced_bronze": 0
+  },
+  {
+    "code": "vu",
+    "name": "Vanuatu",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ws",
+    "name": "Samoa",
+    "continent": "oceanie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "xk",
+    "name": "Kosovo",
+    "continent": "europe",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "xr",
+    "name": "Équipe olympique des réfugiés",
+    "continent": "refugies",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "ye",
+    "name": "Yémen",
+    "continent": "asie",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  },
+  {
+    "code": "za",
+    "name": "Afrique du Sud",
+    "continent": "afrique",
+    "announced_gold": 1,
+    "announced_silver": 4,
+    "announced_bronze": 1
+  },
+  {
+    "code": "zm",
+    "name": "Zambie",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 1
+  },
+  {
+    "code": "zw",
+    "name": "Zimbabwe",
+    "continent": "afrique",
+    "announced_gold": 0,
+    "announced_silver": 0,
+    "announced_bronze": 0
+  }
+]

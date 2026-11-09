@@ -1,0 +1,606 @@
+{
+  "3x3_basketball|Events|Men": {
+    "name": "Hommes",
+    "sport": "basketball-3x3"
+  },
+  "3x3_basketball|Events|Women": {
+    "name": "Femmes",
+    "sport": "basketball-3x3"
+  },
+  "Archery|Medalists|Men's individual": {
+    "name": "Individuel hommes",
+    "sport": "tir-a-l-arc"
+  },
+  "Archery|Medalists|Women's individual": {
+    "name": "Individuel femmes",
+    "sport": "tir-a-l-arc"
+  },
+  "Archery|Medalists|Mixed team": {
+    "name": "Équipe mixte",
+    "sport": "tir-a-l-arc"
+  },
+  "Artistic_gymnastics|Men's events|Team": {
+    "name": "Concours par équipes hommes",
+    "sport": "gymnastique-artistique"
+  },
+  "Artistic_gymnastics|Men's events|All-around": {
+    "name": "Concours général hommes",
+    "sport": "gymnastique-artistique"
+  },
+  "Artistic_gymnastics|Women's events|Team": {
+    "name": "Concours par équipes femmes",
+    "sport": "gymnastique-artistique"
+  },
+  "Artistic_gymnastics|Women's events|All-around": {
+    "name": "Concours général femmes",
+    "sport": "gymnastique-artistique"
+  },
+  "Artistic_gymnastics|Mixed events|Mixed team": {
+    "name": "Équipe mixte",
+    "sport": "gymnastique-artistique"
+  },
+  "Athletics|Men's events|100 m": {
+    "name": "100 m hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|200 m": {
+    "name": "200 m hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|400 m": {
+    "name": "400 m hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|800 m": {
+    "name": "800 m hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|1500 m": {
+    "name": "1500 m hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|3000 m": {
+    "name": "3000 m hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|110 m hurdles": {
+    "name": "110 m haies hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|400 m hurdles": {
+    "name": "400 m haies hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|2000 m steeplechase": {
+    "name": "2000 m steeple hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|5000 m race walk": {
+    "name": "5000 m marche hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|High jump": {
+    "name": "Saut en hauteur hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Pole vault": {
+    "name": "Saut à la perche hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Long jump": {
+    "name": "Saut en longueur hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Triple jump": {
+    "name": "Triple saut hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Shot put": {
+    "name": "Lancer du poids hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Discus throw": {
+    "name": "Lancer du disque hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Hammer throw": {
+    "name": "Lancer du marteau hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Men's events|Javelin throw": {
+    "name": "Lancer du javelot hommes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|100 m": {
+    "name": "100 m femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|200 m": {
+    "name": "200 m femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|400 m": {
+    "name": "400 m femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|800 m": {
+    "name": "800 m femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|1500 m": {
+    "name": "1500 m femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|3000 m": {
+    "name": "3000 m femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|100 m hurdles": {
+    "name": "100 m haies femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|400 m hurdles": {
+    "name": "400 m haies femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|2000 m steeplechase": {
+    "name": "2000 m steeple femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|5000 m race walk": {
+    "name": "5000 m marche femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|High jump": {
+    "name": "Saut en hauteur femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Pole vault": {
+    "name": "Saut à la perche femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Long jump": {
+    "name": "Saut en longueur femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Triple jump": {
+    "name": "Triple saut femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Shot put": {
+    "name": "Lancer du poids femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Discus throw": {
+    "name": "Lancer du disque femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Hammer throw": {
+    "name": "Lancer du marteau femmes",
+    "sport": "athletisme"
+  },
+  "Athletics|Women's events|Javelin throw": {
+    "name": "Lancer du javelot femmes",
+    "sport": "athletisme"
+  },
+  "Badminton|Events|Men's singles": {
+    "name": "Simple hommes",
+    "sport": "badminton"
+  },
+  "Badminton|Events|Women's singles": {
+    "name": "Simple femmes",
+    "sport": "badminton"
+  },
+  "Baseball5|Medalists|Mixed event": {
+    "name": "Épreuve mixte",
+    "sport": "baseball5"
+  },
+  "Beach_handball|Medalists|Men": {
+    "name": "Hommes",
+    "sport": "beach-handball"
+  },
+  "Beach_handball|Medalists|Women": {
+    "name": "Femmes",
+    "sport": "beach-handball"
+  },
+  "Beach_volleyball|Events|Men": {
+    "name": "Hommes",
+    "sport": "beach-volley"
+  },
+  "Beach_volleyball|Events|Women": {
+    "name": "Femmes",
+    "sport": "beach-volley"
+  },
+  "Beach_wrestling|Men's events|60 kg": {
+    "name": "60 kg hommes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Men's events|70 kg": {
+    "name": "70 kg hommes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Men's events|80 kg": {
+    "name": "80 kg hommes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Men's events|90 kg": {
+    "name": "90 kg hommes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Women's events|45 kg": {
+    "name": "45 kg femmes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Women's events|55 kg": {
+    "name": "55 kg femmes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Women's events|65 kg": {
+    "name": "65 kg femmes",
+    "sport": "lutte-de-plage"
+  },
+  "Beach_wrestling|Women's events|75 kg": {
+    "name": "75 kg femmes",
+    "sport": "lutte-de-plage"
+  },
+  "Boxing|Men's events|50 kg": {
+    "name": "50 kg hommes",
+    "sport": "boxe"
+  },
+  "Boxing|Men's events|55 kg": {
+    "name": "55 kg hommes",
+    "sport": "boxe"
+  },
+  "Boxing|Men's events|60 kg": {
+    "name": "60 kg hommes",
+    "sport": "boxe"
+  },
+  "Boxing|Men's events|65 kg": {
+    "name": "65 kg hommes",
+    "sport": "boxe"
+  },
+  "Boxing|Men's events|70 kg": {
+    "name": "70 kg hommes",
+    "sport": "boxe"
+  },
+  "Boxing|Women's events|−48 kg": {
+    "name": "−48 kg femmes",
+    "sport": "boxe"
+  },
+  "Boxing|Women's events|51 kg": {
+    "name": "51 kg femmes",
+    "sport": "boxe"
+  },
+  "Boxing|Women's events|54 kg": {
+    "name": "54 kg femmes",
+    "sport": "boxe"
+  },
+  "Boxing|Women's events|57 kg": {
+    "name": "57 kg femmes",
+    "sport": "boxe"
+  },
+  "Boxing|Women's events|60 kg": {
+    "name": "60 kg femmes",
+    "sport": "boxe"
+  },
+  "Breaking|Medalists|B-Boys": {
+    "name": "B-Boys",
+    "sport": "breaking"
+  },
+  "Breaking|Medalists|B-Girls": {
+    "name": "B-Girls",
+    "sport": "breaking"
+  },
+  "Coastal_rowing|Events|Men's solo": {
+    "name": "Solo hommes",
+    "sport": "aviron-de-mer"
+  },
+  "Coastal_rowing|Events|Women's solo": {
+    "name": "Solo femmes",
+    "sport": "aviron-de-mer"
+  },
+  "Coastal_rowing|Events|Mixed double sculls": {
+    "name": "Deux de couple mixte",
+    "sport": "aviron-de-mer"
+  },
+  "Equestrian|Medalists|Individual jumping": {
+    "name": "Saut d'obstacles individuel",
+    "sport": "sports-equestres"
+  },
+  "Fencing|Events|Men's épée": {
+    "name": "Épée hommes",
+    "sport": "escrime"
+  },
+  "Fencing|Events|Men's foil": {
+    "name": "Fleuret hommes",
+    "sport": "escrime"
+  },
+  "Fencing|Events|Men's sabre": {
+    "name": "Sabre hommes",
+    "sport": "escrime"
+  },
+  "Fencing|Events|Women's épée": {
+    "name": "Épée femmes",
+    "sport": "escrime"
+  },
+  "Fencing|Events|Women's foil": {
+    "name": "Fleuret femmes",
+    "sport": "escrime"
+  },
+  "Fencing|Events|Women's sabre": {
+    "name": "Sabre femmes",
+    "sport": "escrime"
+  },
+  "Futsal|Medalists|Men": {
+    "name": "Hommes",
+    "sport": "futsal"
+  },
+  "Futsal|Medalists|Women": {
+    "name": "Femmes",
+    "sport": "futsal"
+  },
+  "Judo|Men's events|55 kg": {
+    "name": "55 kg hommes",
+    "sport": "judo"
+  },
+  "Judo|Men's events|66 kg": {
+    "name": "66 kg hommes",
+    "sport": "judo"
+  },
+  "Judo|Men's events|81 kg": {
+    "name": "81 kg hommes",
+    "sport": "judo"
+  },
+  "Judo|Men's events|100 kg": {
+    "name": "100 kg hommes",
+    "sport": "judo"
+  },
+  "Judo|Women's events|44 kg": {
+    "name": "44 kg femmes",
+    "sport": "judo"
+  },
+  "Judo|Women's events|52 kg": {
+    "name": "52 kg femmes",
+    "sport": "judo"
+  },
+  "Judo|Women's events|63 kg": {
+    "name": "63 kg femmes",
+    "sport": "judo"
+  },
+  "Judo|Women's events|78 kg": {
+    "name": "78 kg femmes",
+    "sport": "judo"
+  },
+  "Road_cycling|Medalists|Men's road race": {
+    "name": "Course en ligne hommes",
+    "sport": "cyclisme-sur-route"
+  },
+  "Road_cycling|Medalists|Men's time trial": {
+    "name": "Contre-la-montre hommes",
+    "sport": "cyclisme-sur-route"
+  },
+  "Road_cycling|Medalists|Women's road race": {
+    "name": "Course en ligne femmes",
+    "sport": "cyclisme-sur-route"
+  },
+  "Road_cycling|Medalists|Women's time trial": {
+    "name": "Contre-la-montre femmes",
+    "sport": "cyclisme-sur-route"
+  },
+  "Rugby_sevens|Medalists|Men": {
+    "name": "Hommes",
+    "sport": "rugby-a-7"
+  },
+  "Rugby_sevens|Medalists|Women": {
+    "name": "Femmes",
+    "sport": "rugby-a-7"
+  },
+  "Sailing|Medalists|Men's Techno 293+": {
+    "name": "Techno 293+ hommes",
+    "sport": "voile"
+  },
+  "Sailing|Medalists|Women's Techno 293+": {
+    "name": "Techno 293+ femmes",
+    "sport": "voile"
+  },
+  "Skateboarding|Medalists|Men's street": {
+    "name": "Street hommes",
+    "sport": "skateboard"
+  },
+  "Skateboarding|Medalists|Women's street": {
+    "name": "Street femmes",
+    "sport": "skateboard"
+  },
+  "Swimming|Men's events|50 m freestyle": {
+    "name": "50 m nage libre hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|100 m freestyle": {
+    "name": "100 m nage libre hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|200 m freestyle": {
+    "name": "200 m nage libre hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|400 m freestyle": {
+    "name": "400 m nage libre hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|50 m backstroke": {
+    "name": "50 m dos hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|100 m backstroke": {
+    "name": "100 m dos hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|200 m backstroke": {
+    "name": "200 m dos hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|50 m breaststroke": {
+    "name": "50 m brasse hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|100 m breaststroke": {
+    "name": "100 m brasse hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|200 m breaststroke": {
+    "name": "200 m brasse hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|50 m butterfly": {
+    "name": "50 m papillon hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|100 m butterfly": {
+    "name": "100 m papillon hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|200 m butterfly": {
+    "name": "200 m papillon hommes",
+    "sport": "natation"
+  },
+  "Swimming|Men's events|200 m individual medley": {
+    "name": "200 m 4 nages hommes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|50 m freestyle": {
+    "name": "50 m nage libre femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|100 m freestyle": {
+    "name": "100 m nage libre femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|200 m freestyle": {
+    "name": "200 m nage libre femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|400 m freestyle": {
+    "name": "400 m nage libre femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|50 m backstroke": {
+    "name": "50 m dos femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|100 m backstroke": {
+    "name": "100 m dos femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|200 m backstroke": {
+    "name": "200 m dos femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|50 m breaststroke": {
+    "name": "50 m brasse femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|100 m breaststroke": {
+    "name": "100 m brasse femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|200 m breaststroke": {
+    "name": "200 m brasse femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|50 m butterfly": {
+    "name": "50 m papillon femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|100 m butterfly": {
+    "name": "100 m papillon femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|200 m butterfly": {
+    "name": "200 m papillon femmes",
+    "sport": "natation"
+  },
+  "Swimming|Women's events|200 m individual medley": {
+    "name": "200 m 4 nages femmes",
+    "sport": "natation"
+  },
+  "Table_tennis|Medalists|Men's singles": {
+    "name": "Simple hommes",
+    "sport": "tennis-de-table"
+  },
+  "Table_tennis|Medalists|Women's singles": {
+    "name": "Simple femmes",
+    "sport": "tennis-de-table"
+  },
+  "Table_tennis|Medalists|Mixed doubles": {
+    "name": "Double mixte",
+    "sport": "tennis-de-table"
+  },
+  "Taekwondo|Men's events|−48 kg": {
+    "name": "−48 kg hommes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Men's events|−55 kg": {
+    "name": "−55 kg hommes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Men's events|−63 kg": {
+    "name": "−63 kg hommes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Men's events|−73 kg": {
+    "name": "−73 kg hommes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Men's events|+73 kg": {
+    "name": "+73 kg hommes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Women's events|−44 kg": {
+    "name": "−44 kg femmes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Women's events|−49 kg": {
+    "name": "−49 kg femmes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Women's events|−55 kg": {
+    "name": "−55 kg femmes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Women's events|−63 kg": {
+    "name": "−63 kg femmes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Women's events|+63 kg": {
+    "name": "+63 kg femmes",
+    "sport": "taekwondo"
+  },
+  "Taekwondo|Mixed events|Mixed team": {
+    "name": "Équipe mixte",
+    "sport": "taekwondo"
+  },
+  "Triathlon|Medalists|Men's": {
+    "name": "Hommes",
+    "sport": "triathlon"
+  },
+  "Triathlon|Medalists|Women's": {
+    "name": "Femmes",
+    "sport": "triathlon"
+  },
+  "Wushu|Medalists|Men's changquan combined": {
+    "name": "Changquan combiné hommes",
+    "sport": "wushu-taolu"
+  },
+  "Wushu|Medalists|Men's taijiquan combined": {
+    "name": "Taijiquan combiné hommes",
+    "sport": "wushu-taolu"
+  },
+  "Wushu|Medalists|Women's changquan combined": {
+    "name": "Changquan combiné femmes",
+    "sport": "wushu-taolu"
+  },
+  "Wushu|Medalists|Women's taijiquan combined": {
+    "name": "Taijiquan combiné femmes",
+    "sport": "wushu-taolu"
+  }
+}

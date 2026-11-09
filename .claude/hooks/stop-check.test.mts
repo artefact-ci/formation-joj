@@ -47,6 +47,25 @@ describe('stop-check hook (Stop)', () => {
     ]);
   });
 
+  it('splits format and lint into batches that fit in a Windows command line', () => {
+    const files = Array.from(
+      { length: 400 },
+      (_, index) => `apps/web/src/features/some-feature/components/file-${index}.tsx`,
+    );
+
+    const commands = checkCommands(files, files, PACKAGES);
+
+    for (const label of ['format', 'lint']) {
+      const batches = commands.filter((command) => command.label === label);
+      expect(batches.length).toBeGreaterThan(1);
+      for (const { args } of batches) {
+        expect(args.join(' ').length).toBeLessThan(4100);
+      }
+      const checked = batches.flatMap(({ args }) => args.filter((arg) => files.includes(arg)));
+      expect(checked).toEqual(files);
+    }
+  });
+
   it('type-checks the hooks when they change', () => {
     expect(
       checkCommands(['.claude/hooks/x.mts'], ['.claude/hooks/x.mts'], PACKAGES),

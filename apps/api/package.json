@@ -8,6 +8,7 @@
     "start": "node dist/main.js",
     "typecheck": "tsc -p tsconfig.json",
     "db:generate": "drizzle-kit generate",
+    "data:extract": "node scripts/extract.mts",
     "db:seed": "node scripts/db.mts seed",
     "db:reset": "node scripts/db.mts reset"
   },

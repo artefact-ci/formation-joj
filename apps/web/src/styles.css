@@ -3,50 +3,64 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Couleurs relevées sur la maquette specs/assets/design.png. */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: #fcfcfe;
+  --foreground: #11243f;
+  --card: #ffffff;
+  --card-foreground: #11243f;
+  --popover: #ffffff;
+  --popover-foreground: #11243f;
+  --primary: #07834b;
+  --primary-foreground: #ffffff;
+  --secondary: #eef0f3;
+  --secondary-foreground: #11243f;
+  --muted: #eef0f3;
+  --muted-foreground: #4a5568;
+  --accent: #e8f7db;
+  --accent-foreground: #11243f;
+  --destructive: #dc1b37;
+  --border: #e3e6ea;
+  --input: #e3e6ea;
+  --ring: #07834b;
   --radius: 0.625rem;
+  --joj-pale-yellow: #fdefc4;
+  --joj-pale-red: #fcdbdf;
 }
 
+/* Le thème sombre reprend le bleu nuit et le vert de la maquette. */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: #0d1b2f;
+  --foreground: #f3f5f8;
+  --card: #14263f;
+  --card-foreground: #f3f5f8;
+  --popover: #14263f;
+  --popover-foreground: #f3f5f8;
+  --primary: #4cd08f;
+  --primary-foreground: #06180f;
+  --secondary: #1e3350;
+  --secondary-foreground: #f3f5f8;
+  --muted: #1e3350;
+  --muted-foreground: #b4bfcd;
+  --accent: #1c4a35;
+  --accent-foreground: #f3f5f8;
+  --destructive: #ff6b7f;
+  --border: #2a3f5c;
+  --input: #2a3f5c;
+  --ring: #4cd08f;
+  --joj-pale-yellow: #5a4a12;
+  --joj-pale-red: #5a1f2a;
 }
 
 @theme inline {
+  --color-joj-green: #07834b;
+  --color-joj-yellow: #fabb09;
+  --color-joj-red: #dc1b37;
+  --color-joj-night: #11243f;
+  --color-joj-pale-yellow: var(--joj-pale-yellow);
+  --color-joj-pale-red: var(--joj-pale-red);
+  --color-medal-silver: #c9ced6;
+  --color-medal-bronze: #e59a5b;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
